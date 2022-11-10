@@ -1,9 +1,12 @@
 import {Link} from 'react-router-dom';
 import React, {useState} from 'react';
+// import "../styles/Menubar.css";
 
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+
+
 
 
 const Menubar=()=>{
@@ -54,10 +57,10 @@ const Menubar=()=>{
               </Link>
             </li>
 
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <button class="btn btn-primary" onClick={logOut}>Log Out
               </button>
-            </li>
+            </li> */}
       </>
     )
   }

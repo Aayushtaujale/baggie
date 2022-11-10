@@ -1,12 +1,65 @@
 import '../styles/register.css';
+import { useState } from 'react';
+import axios from 'axios';
+import '../styles/register.css';
+// import Fade from 'react-reveal/Fade';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const Register=()=>{
+    const [firstname, setFirstname] = useState('');
+    const [lastname,setLastname] = useState('');
+    const [number,setNumber] = useState('');
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const [message,setMessage] = useState('');
+    const notify = (message) => toast.success(message);
+
+    const registerCustomer=(e)=>{
+        e.preventDefault();
+        if(firstname==="" || lastname==="" || number==="" || email==="" || password===""){
+            toast.error("Error Validations Failed");
+            return;
+        }
+        const data = {
+            firstname : firstname,
+            lastname: lastname,
+            number: number,
+            email : email,
+            password: password
+        }
+        const config ={
+            headers:{
+                Authorization:'Bearer'+localStorage.getItem('ticket')
+            }
+        }
+
+        
+        axios.post('http://localhost:90/customer/register',data)
+        .then(response=>{
+            
+            setMessage(response.data.message);
+            console.log(response.data.message)
+
+            notify("Register Successful");
+            
+                
+            setTimeout(() => {
+              window.location.replace("/login");
+            }, 1000);
+        })
+        .catch(e=>{
+            toast.error("Invalid login credentials");
+            console.log(e)
+        })
+    }
     
     
     return(
  
         <div className="containerfirst">
+              <h2>Register</h2>
              
              <div className='containersecond'>
             <div className="row">
@@ -21,8 +74,8 @@ const Register=()=>{
                 <label className='register-label' >Firstname</label>
                
                 
-                <input ttype="text"
-                  className="register-input"  placeholder="Firstname"/>
+                <input type="text"
+                  className="register-input" onChange={(e)=>setFirstname(e.target.value)}  placeholder="Firstname"/>
                
             </div>
             <br/>
@@ -33,7 +86,7 @@ const Register=()=>{
                 
 
                 <input type="text"
-                  className="register-input"  placeholder="Lastname" />
+                  className="register-input" onChange={(e)=>setLastname(e.target.value)} placeholder="Lastname" />
                 
             
             </div>
@@ -45,12 +98,12 @@ const Register=()=>{
                 
 
                 <input type="text"
-                  className="register-input" placeholder="Contact" />
+                  className="register-input" onChange={(e)=>setNumber(e.target.value) } placeholder="Contact" />
                 
             </div>
             <br/>
 
-            <div class="form-group">
+            {/* <div class="form-group">
             
                 <label className='register-label'>Address</label>
                 
@@ -58,7 +111,7 @@ const Register=()=>{
                 <input type="text"
                   className="register-input" placeholder="Address" />
                 
-            </div>
+            </div> */}
             <br/>
 
             <div class="form-group">
@@ -66,7 +119,7 @@ const Register=()=>{
                 <label className='register-label'>Email</label>
                 
                 <input type="text"
-                  className="register-input"
+                  className="register-input" onChange={(e)=>setEmail(e.target.value)}
 
                   placeholder="Email"/>
                 
@@ -78,12 +131,12 @@ const Register=()=>{
                 
 
                 <input type="text"
-                  className="register-input"   placeholder="Password" />
+                  className="register-input" onChange={(e)=>setPassword(e.target.value)}  placeholder="Password" />
                 
             </div>
             <br/>
 
-            <div class="form-group">
+            {/* <div class="form-group">
             
                 <label className='register-label'>Confirm Password</label>
                 
@@ -91,11 +144,11 @@ const Register=()=>{
                 <input type="text"
                   className="register-input"  placeholder="Confirm Password" />
                 
-            </div>
+            </div> */}
             <br/>
     
             
-            <button type="submit" className="button">Register</button>
+            <button type="submit" className="btn btn-primary" onClick={registerCustomer}>Register</button>
            
             </form>
 
