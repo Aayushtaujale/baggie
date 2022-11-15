@@ -59,14 +59,17 @@ const Register=()=>{
     return(
  
         <div className="containerfirst">
-              <h2>Register</h2>
-             
-             <div className='containersecond'>
+              <div className='containersecond'>
+             <video src='/videos/video.mp4' autoPlay loop muted />
             <div className="row">
                 <div className="col-md-9">
-               
+                <br></br>
 
-                <h2 className='h2'>Register Here</h2>
+                <h2>Register</h2>
+                <br></br>
+                
+
+                <p>{message}</p>
           
             <form>
             <div class="form-group">
@@ -155,6 +158,13 @@ const Register=()=>{
 
 
                 </div>
+                <div className='logosection'>
+            <img url=''></img>
+            
+            
+           
+            </div>
+                
             </div>
             </div>
             

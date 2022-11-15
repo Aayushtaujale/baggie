@@ -1,9 +1,10 @@
 .containersecond{
-    background-image: url('/public/images/register.jpg') ;
-    height: 715px;
+    /* background-image: url('/public/images/register.jpg') ; */
+    height: 750px;
     width: 680px;
     background-position: center;
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.47);
    
     color: rgb(255, 255, 255);
     
@@ -63,16 +64,16 @@
     display: inline-block;
     font-size: 1.025rem;
     margin-bottom: 6px;
-    color: black;
+    color: rgb(192, 187, 187);
     margin-right: 20px;
     align-content: center;
   }
 
   .register-input {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center;  */
+    /* align-items: center; */
     padding-left: 10px;
     outline: none;
     border-radius: 2px;
@@ -95,3 +96,17 @@
   margin-top: 5px;
   display:flex; flex-direction: row; justify-content: center; align-items: center
 }
+
+
+/* .logosection > img 
+    {
+    margin-left: 100px;
+    margin-top: -800px;
+    background: url('/public/images/logo2.png') center center/cover no-repeat;
+    position:relative;
+    height: 80px;
+    width: 150px;
+    animation: rotation 2s infinite linear;
+    }
+
+     */

@@ -65,14 +65,15 @@ const Login = () => {
 }
 
   return (
-    <div className="login mt-5">
+    <div className="login ">
+      <video src='/videos/baggies.mp4' autoPlay loop muted />
       <div className="loginsecond">
         <div className="roww">
           <div className="topic">
             <p>{message}</p>
 
             <div>
-              <h1>Login Here</h1>
+              <h1 className='topiclabel'>Login Here</h1>
             </div>
             <form>
               <div class="formgroup">

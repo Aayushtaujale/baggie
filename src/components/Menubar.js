@@ -33,9 +33,7 @@ const Menubar=()=>{
   if(localStorage.getItem('ticket') ){
     menu=(
       <>
-      {/* <li class="nav-item">
-              <Link class="nav-link" to="/booking">Book
-              </Link></li> */}
+      
 
               <li class="nav-item">
               <Link class="nav-link" to="/profile">Profile
@@ -47,20 +45,17 @@ const Menubar=()=>{
               </Link>
             </li>
 
-            <li class="nav-item">
-              <Link class="nav-link" to="/displaybookings">My bookings
-              </Link>
-            </li>
+            
 
             <li class="nav-item">
               <Link class="nav-link" to="/venueupdate">Product Update
               </Link>
             </li>
 
-            {/* <li class="nav-item">
+            <li class="nav-item">
               <button class="btn btn-primary" onClick={logOut}>Log Out
               </button>
-            </li> */}
+            </li>
       </>
     )
   }
@@ -80,7 +75,7 @@ const Menubar=()=>{
   }
 
     return(
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
         <a class="navbar-brand" href="/Home">Baggie</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon" ></span>
@@ -124,12 +119,10 @@ const Menubar=()=>{
         </div>
       </nav>
 
+  
+
     )
 
-
-
-
-    
 }
 
 
