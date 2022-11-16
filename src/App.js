@@ -1,26 +1,29 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Login from "./components/login";
+// import Header from './components/header';
+// import Footer from './components/footer';
 
+import Mid from './components/mid';
+import {BrowserRouter} from 'react-router-dom';
+import AddCategory from './components/add_category';
+// import './mystyle.css';
+
+<meta charset="utf-8" />
+
+
+
+// import './components/css/style.css';
 function App() {
   return (
-    <div className="App">
-      <Login></Login>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+    
+
+    <BrowserRouter>
+    
+    <div>
+      <AddCategory></AddCategory>
+    
     </div>
+
+    </BrowserRouter>
+
   );
 }
 
