@@ -2,7 +2,7 @@ import {Route, Routes} from "react-router-dom";
 import Register from "./register";
 import Login from "./login";
 
-
+import CategoryShowAdd from "./add_category"
 const Mid=()=>{
     return(
         <Routes>
@@ -18,7 +18,7 @@ const Mid=()=>{
             
             <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
-           
+            <Route path="/addcategory" element={<CategoryShowAdd></CategoryShowAdd>}></Route>
             
         </Routes>
     )
