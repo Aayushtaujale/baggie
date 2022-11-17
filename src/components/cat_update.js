@@ -10,6 +10,8 @@ const UpdateCategory=()=>{
     const [categoryName, setCategoryName] = useState([]);
     const [categoryDetails, setCategoryDetails]= useState([]);
 
+    
+    const [categoryD, setCategoryD]= useState([]);
     const[cate, setCate]=useState([])
 
 
@@ -23,9 +25,12 @@ const UpdateCategory=()=>{
         
         .then((result)=>{
             console.log(result);
-            setCategoryDetails(result.data.data);
+            setCategoryD(result.data.data);
             setCategoryName(result.data.data.categoryName)
-            setCategoryDetails(result.data.data.setCategoryDetails)
+            console.log(setCategoryName)
+            console.log("nononono")
+            setCategoryDetails(result.data.data.categoryDetails)
+            console.log(setCategoryDetails)
 
             console.log("sdnfjjdf")
             console.log(result.data.data.categoryName)
@@ -71,7 +76,13 @@ const UpdateCategory=()=>{
             console.log(result);
     
             setCate(result.data.data);
-          
+            console.log(cate)
+             setCategoryName(cate.categoryName)
+            console.log("wath")
+            setCategoryDetails(cate.setCategoryDetails)
+
+            
+        
             
           })
           .catch((e) => {
@@ -92,7 +103,7 @@ return(
 
 
         <div className="sav-change">
-            <div className="text-center"><h3 > Update {categoryDetails.categoryName}</h3></div>
+            <div className="text-center"><h3 > Update {categoryD.categoryName}</h3></div>
     <form>      
 <input name="categoryName" type="text" class="feedback-input " placeholder="categoryName" value={categoryName} required onChange={(e)=>setCategoryName(e.target.value)}/>
 

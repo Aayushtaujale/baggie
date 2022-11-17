@@ -9,6 +9,9 @@ const CategoryShowAdd = () => {
     const[message, setMessage]=useState('');
     const [categoryDetails, setCategoryDetails]= useState([]);
 
+    const [categoryList, setCategoryList]= useState([]);
+
+
 
     const addCategory=(e)=>{
         e.preventDefault();
@@ -51,7 +54,7 @@ const CategoryShowAdd = () => {
           console.log("category")
           console.log(result);
   
-          setCategoryDetails(result.data.data);
+          setCategoryList(result.data.data);
         
           
         })
@@ -128,7 +131,7 @@ const CategoryShowAdd = () => {
        <div className="show-cat">
            <div style={{color: "#9F2893",  textAlign: 'center' }}>
                <h3> Categories</h3>
-               {categoryDetails.map((categoryy) => {
+               {categoryList.map((categoryy) => {
          return (
                        
                         <div className="">
