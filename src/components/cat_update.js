@@ -1,5 +1,3 @@
-
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -14,11 +12,7 @@ const UpdateCategory=()=>{
 
     const[cate, setCate]=useState([])
 
-    const config = {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("ticket"),
-        },
-      };
+
   
   
     
@@ -71,7 +65,7 @@ const UpdateCategory=()=>{
 
       useEffect(()=>{
         axios
-          .get("http://localhost:90/category/display", config)
+          .get("http://localhost:90/category/display")
           .then((result) => {
             console.log("category")
             console.log(result);
