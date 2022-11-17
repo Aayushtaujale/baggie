@@ -40,7 +40,7 @@ const Login = () => {
             
             setTimeout(() => {
                
-              window.location.replace("/profile");
+              window.location.replace("/addcategory");
               notify("Logged In")
               
               

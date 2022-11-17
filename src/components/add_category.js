@@ -8,91 +8,76 @@ const CategoryShowAdd = () => {
     const [categoryName, setCategoryName] = useState('');
     const[message, setMessage]=useState('');
     const [categoryDetails, setCategoryDetails]= useState([]);
-    const [categoryImage, setCategoryImage]=useState([]);
 
 
+    const addCategory=(e)=>{
+        e.preventDefault();
     
-    // const config = {
-    //   headers: {
-    //     Authorization: "Bearer " + localStorage.getItem("ticket"),
-    //   },
-    // };
-
-
-  
-  //  const addCategory=(e)=>{
-  //   e.preventDefault();
-
-  //   e.preventDefault();
-  //   const data = {
-  //     categoryName: categoryName
-  //   };
-        
-  //   if(categoryName!=""){
-  //       axios
-  //       .post("http://localhost:2099/admin/addCategory",data , config)
-  //       .then(response=>{
-
+            console.warn(categoryName, categoryDetails)
+            // console.warn(title, content)
+            const formData= new FormData();
           
-  //           //see in console. data is stored in data:{token:.............}
-  //           setMessage(response.data.msg);       
+            formData.append("categoryName" ,categoryName);
+            formData.append("categoryDetails" , categoryDetails);
+            // formData.append("categoryImage" , categoryImage);
+    
+            // const config = {
+            //     headers: {
+            //       Authorization: "Bearer " + localStorage.getItem("ticket"),
+            //     },
+            //   };
+            axios
+            .post("http://localhost:90/admin/addcategory",{categoryName,categoryDetails}  )
+            .then(response=>{
+                //see in console. data is stored in data:{token:.............}
+                setMessage(response.data.msg);       
+    
+                    alert ("Category succesfully posted!");
+    
+                    window.location.reload();
+                
+            })
+            .catch(e=>{
+                console.log(e)
+                alert (" All fields required" + " Try again!")
+            })
+        };
 
-  //               alert (response.data.msg);
-  //               window.location.reload();
-            
-  //       })
-  //     }
 
-  //     else{
-  //       alert("Field cannot be empty!")
-
-  //     }
-
-
-
-  //   }
-
-
+  useEffect(()=>{
+      axios
+        .get("http://localhost:90/category/display")
+        .then((result) => {
+          console.log("category")
+          console.log(result);
   
-  
-  
-  // useEffect(()=>{
-  //     axios
-  //       .get("http://localhost:2099/category/display", config)
-  //       .then((result) => {
-  //         console.log("category")
-  //         console.log(result);
-  
-  //         setCategoryDetails(result.data.data);
+          setCategoryDetails(result.data.data);
         
           
-  //       })
-  //       .catch((e) => {
-  //         console.log(e);
-  //       });
-  //   }, []);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }, []);
     
+  
 
-
-
+    
     //delete category
-    // const deleteCategory = (pid) => {
-    //   const data = {
-    //     id: pid,
-    //   };
-    //   axios
-    //     .delete("http://localhost:2099/category/delete/" + pid, config)
-    //     .then((result) => {
-    //       console.log(result);
-    //       if (result.data.status) {
-    //         alert("Post deleted!")
-    //         window.location.reload();
-    //       }
-    //     });
-    // };
-
-
-
+    const deleteCategory = (pid) => {
+      const data = {
+        id: pid,
+      };
+      axios
+        .delete("http://localhost:90/category/delete/" + pid)
+        .then((result) => {
+          console.log(result);
+          if (result.data.status) {
+            alert("Post deleted!")
+            window.location.reload();
+          }
+        });
+    };
 
     return(
       <body>
@@ -108,7 +93,7 @@ const CategoryShowAdd = () => {
  <div ><input name="categoryName" type="text" class="feedback-input " placeholder="categoryName" required onChange={(e)=>setCategoryName(e.target.value)}/>  
   </div>
 
-    <div className="a-img"><label htmlFor="fileInput" style={{display: "flex" , justifyContent: "space-between"}}>
+    {/* <div className="a-img"><label htmlFor="fileInput" style={{display: "flex" , justifyContent: "space-between"}}>
        <p className="pluss">+</p>
        <p>Image</p>
          </label>
@@ -117,34 +102,33 @@ const CategoryShowAdd = () => {
            id="fileInput"
            style={{ display: "none" }}
            onChange={(e) => setCategoryImage(e.target.files[0])}
-         /></div>
-
+         />
+         
+         
+         </div> */}
 </div> 
- {/* <textarea name="text" class="feedback-input" placeholder="Comment"></textarea> */}
- 
 
- <div className="a-bott">
+
+ {/* <textarea name="text" class="feedback-input" placeholder="Comment"></textarea> */}
+  <div className="a-bott">
       <textarea
             placeholder="Tell something about the characterstics..."
             type="text"
             className="writeInput writeText"
             onChange={e=>setCategoryDetails(e.target.value)}
         ></textarea>
-
       </div>
 <div className="pt-5">
- <div className="pt-5" style={{display: "flex" , justifyContent: "center"}}><button type="submit" className="btn btn-primary pt"  > Post</button></div>
+ <div className="pt-5"  style={{display: "flex" ,
+  justifyContent: "center"}}><button onClick={addCategory}  className="writeSubmit" > Post</button></div>
 </div>
 
 </form>
        </div>
-
-
-
        <div className="show-cat">
            <div style={{color: "#9F2893",  textAlign: 'center' }}>
                <h3> Categories</h3>
-               {/* {categoryDetails.map((categoryy) => {
+               {categoryDetails.map((categoryy) => {
          return (
                        
                         <div className="">
@@ -165,7 +149,7 @@ const CategoryShowAdd = () => {
                            
                      
                        );
-                   })} */}
+                   })}
            </div>
           
 
@@ -184,4 +168,4 @@ const CategoryShowAdd = () => {
 
 }
 
-export default CategoryShowAdd
+export default CategoryShowAdd;
