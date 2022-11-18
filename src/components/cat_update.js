@@ -13,11 +13,7 @@ const UpdateCategory=()=>{
     
     const [categoryD, setCategoryD]= useState([]);
     const[cate, setCate]=useState([])
-
-
-  
-  
-    
+       
     useEffect(()=>{
         axios
         // .get("http://localhost:2099/blogpost/display")
@@ -25,6 +21,7 @@ const UpdateCategory=()=>{
         
         .then((result)=>{
             console.log(result);
+            
             setCategoryD(result.data.data);
             setCategoryName(result.data.data.categoryName)
             console.log(setCategoryName)
@@ -35,10 +32,7 @@ const UpdateCategory=()=>{
             console.log("sdnfjjdf")
             console.log(result.data.data.categoryName)
             console.log(result.data.data.setCategoryDetails)
-          
-         
-
-        })
+           })
         .catch()
     }, [])
 
@@ -90,41 +84,36 @@ const UpdateCategory=()=>{
           });
       }, []);
       
-    
-    
-  
- 
 
 return(
-
-
     <body>
     <div className="ad-cat">
 
 
         <div className="sav-change">
             <div className="text-center"><h3 > Update {categoryD.categoryName}</h3></div>
-    <form>      
-<input name="categoryName" type="text" class="feedback-input " placeholder="categoryName" value={categoryName} required onChange={(e)=>setCategoryName(e.target.value)}/>
+            <form>      
+              <input name="categoryName" type="text" class="feedback-input " placeholder="categoryName" value={categoryName} required onChange={(e)=>setCategoryName(e.target.value)}/>
 
-<input name="categoryDetails" type="text" class="feedback-input " placeholder="categoryName" value={categoryDetails} required onChange={(e)=>setCategoryDetails(e.target.value)}/>   
+              <input name="categoryDetails" type="text" class="feedback-input " placeholder="categoryName" value={categoryDetails} required onChange={(e)=>setCategoryDetails(e.target.value)}/>   
 
-{/* <textarea name="text" class="feedback-input" placeholder="Comment"></textarea> */}
 
-<div className="pt-5"><button type="submit" className="btn btn-primary pt"  onClick={updatec}> Post</button></div>
-</form>
+              <div className="pt-5"><button type="submit" className="btn btn-primary pt"  onClick={updatec}> Post</button></div>
+            </form>
     </div>
+
+
+{/* This is the right side of the page where categories are shown------------------------------------------------------------------------------------------------------------------------------ */}
+
     <div className="show-cat">
             <div>
                 <h3> Categories</h3>
                 {cate.map((categoryy) => {
           return (
-                        
+ 
                          <div className="">
-                          
                          <h6 id="chose-cat" className="cate-cat pt-2">{categoryy.categoryName} <Link to={"/updatecate/" + categoryy._id}>nbsp; Update</Link> 
                             </h6>
-                         
                             </div>
                             
                             

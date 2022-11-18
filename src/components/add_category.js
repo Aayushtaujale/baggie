@@ -8,6 +8,8 @@ const CategoryShowAdd = () => {
     const [categoryName, setCategoryName] = useState('');
     const[message, setMessage]=useState('');
     const [categoryDetails, setCategoryDetails]= useState([]);
+    const[categoryImage, setCategoryImage]= useState('');
+
 
     const [categoryList, setCategoryList]= useState([]);
 
@@ -16,13 +18,13 @@ const CategoryShowAdd = () => {
     const addCategory=(e)=>{
         e.preventDefault();
     
-            console.warn(categoryName, categoryDetails)
+            console.warn(categoryName, categoryDetails, categoryImage)
             // console.warn(title, content)
             const formData= new FormData();
           
             formData.append("categoryName" ,categoryName);
             formData.append("categoryDetails" , categoryDetails);
-            // formData.append("categoryImage" , categoryImage);
+            formData.append("categoryImage" , categoryImage);
     
             // const config = {
             //     headers: {
@@ -30,7 +32,7 @@ const CategoryShowAdd = () => {
             //     },
             //   };
             axios
-            .post("http://localhost:90/admin/addcategory",{categoryName,categoryDetails}  )
+            .post("http://localhost:90/admin/addcategory",formData  )
             .then(response=>{
                 //see in console. data is stored in data:{token:.............}
                 setMessage(response.data.msg);       
@@ -86,34 +88,51 @@ const CategoryShowAdd = () => {
       <body>
        <div className="ad-cat">
 
-<div></div>
+
            <div className="sav-change">
                <div className="text-center"><h2 style={{color: "#9F2893",  textAlign: 'center' }} > Add Category</h2></div>
-       <form> 
-       <div className="categoryN"><input
-            type="text"
-            placeholder="Title"
-            className="writeInput"
-            autoFocus={true}
-            onChange={e=>setCategoryName(e.target.value)}
-          /></div> 
+
+                  <form> 
+                                    <div className="a-img"><label htmlFor="fileInput">
+                          <p className="pluss">+</p>
+                          <p>Image</p>
+                            </label>
+                            <input
+                              type="file"
+                              id="fileInput"
+                              style={{ display: "none" }}
+                              onChange={(e) => setCategoryImage(e.target.files[0])}
+                            /></div>
+                        <div className="categoryN"><input
+                              type="text"
+                              placeholder="Title"
+                              className="writeInput"
+                              autoFocus={true}
+                              onChange={e=>setCategoryName(e.target.value)}
+                            />
+                          </div> 
 
 
-  <div className="a-bott">
-      <textarea
-            placeholder="Tell something about the characterstics..."
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setCategoryDetails(e.target.value)}
-        ></textarea>
-      </div>
-<div className="pt-5">
- <div className="pt-5"  style={{display: "flex" ,
-  justifyContent: "center"}}><button onClick={addCategory}  className="writeSubmit" > Post</button></div>
-</div>
+                        <div className="a-bott">
+                          <textarea
+                                placeholder="Tell something about the characterstics..."
+                                type="text"
+                                className="writeInput writeText"
+                                onChange={e=>setCategoryDetails(e.target.value)}
+                            ></textarea>
+                        </div>
+                      
+                        <div className="pt-5">
+                          <div className="pt-5"  style={{display: "flex" ,
+                            justifyContent: "center"}}><button onClick={addCategory}  className="writeSubmit" > Post</button></div> 
+                        </div>
+                  </form>
 
-</form>
-       </div>
+          </div>
+
+
+
+{/* This is the right side of the page where categories are shown------------------------------------------------------------------------------------------------------------------------------ */}
        <div className="show-cat">
            <div style={{color: "#9F2893",  textAlign: 'center' }}>
                <h3> Categories</h3>
@@ -122,18 +141,12 @@ const CategoryShowAdd = () => {
                        
                         <div className="">
                          
-                        <h6 id="chose-cat" className="cate-cat pt-2">  <h6 id="c-n">{categoryy.categoryName}</h6> <h6 id="c-u"><Link to={"/updatecate/" + categoryy._id}>Update</Link>
-                        
-                         </h6>
-                             
-                        <h6 id="c-d"><a href="" className=" text-danger"
-   onClick={() => {
-     deleteCategory(categoryy._id);}}
-   >delete</a></h6>
-                           </h6>
-                         
-                        
-                           </div>
+                          <h6 id="chose-cat" className="cate-cat pt-2">  <h6 id="c-n">{categoryy.categoryName}</h6> <h6 id="c-u"><Link to={"/updatecate/" + categoryy._id}>Update</Link>    
+                          </h6>
+                              
+                          <h6 id="c-d"><a href="" className=" text-danger" onClick={() => {deleteCategory(categoryy._id);}}>delete</a></h6>
+                          </h6>
+                          </div>
                            
                            
                      
@@ -141,20 +154,10 @@ const CategoryShowAdd = () => {
                    })}
            </div>
           
-
-
-
        </div>
-
-      
-
        </div>
-
-
-
       </body>
    )
-
 }
 
 export default CategoryShowAdd;
