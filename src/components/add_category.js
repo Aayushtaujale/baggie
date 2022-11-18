@@ -90,29 +90,15 @@ const CategoryShowAdd = () => {
            <div className="sav-change">
                <div className="text-center"><h2 style={{color: "#9F2893",  textAlign: 'center' }} > Add Category</h2></div>
        <form> 
-<div className="nandi" style={{display: "flex" , justifyContent: "space-between"}}>      
- 
- 
- <div ><input name="categoryName" type="text" class="feedback-input " placeholder="categoryName" required onChange={(e)=>setCategoryName(e.target.value)}/>  
-  </div>
-
-    {/* <div className="a-img"><label htmlFor="fileInput" style={{display: "flex" , justifyContent: "space-between"}}>
-       <p className="pluss">+</p>
-       <p>Image</p>
-         </label>
-         <input
-           type="file"
-           id="fileInput"
-           style={{ display: "none" }}
-           onChange={(e) => setCategoryImage(e.target.files[0])}
-         />
-         
-         
-         </div> */}
-</div> 
+       <div className="categoryN"><input
+            type="text"
+            placeholder="Title"
+            className="writeInput"
+            autoFocus={true}
+            onChange={e=>setCategoryName(e.target.value)}
+          /></div> 
 
 
- {/* <textarea name="text" class="feedback-input" placeholder="Comment"></textarea> */}
   <div className="a-bott">
       <textarea
             placeholder="Tell something about the characterstics..."
