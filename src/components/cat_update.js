@@ -9,11 +9,29 @@ const UpdateCategory=()=>{
 
     const [categoryName, setCategoryName] = useState([]);
     const [categoryDetails, setCategoryDetails]= useState([]);
+    const[categoryImage, setCategoryImage]= useState("")
+    const[categoryId, setId]= useState("");
 
     
     const [categoryD, setCategoryD]= useState([]);
     const[cate, setCate]=useState([])
-       
+    
+
+
+    const changeImage=(e)=>{
+      console.log(categoryImage)
+      e.preventDefault();
+      const form = new FormData();
+      form.append("id",categoryId)
+      form.append("pic", categoryImage)
+
+      
+   
+      axios
+      .post("http://localhost:90/category/picture/update", form)
+      window.location.reload();
+
+    }
     useEffect(()=>{
         axios
         // .get("http://localhost:2099/blogpost/display")
@@ -24,14 +42,16 @@ const UpdateCategory=()=>{
             
             setCategoryD(result.data.data);
             setCategoryName(result.data.data.categoryName)
-            console.log(setCategoryName)
-            console.log("nononono")
+            setId(result.data.data._id);
+          setCategoryImage(result.data.data.categoryImage)
+          
             setCategoryDetails(result.data.data.categoryDetails)
             console.log(setCategoryDetails)
+            setId(result.data.data._id);
+          setCategoryImage(result.data.data.categoryImage)
 
             console.log("sdnfjjdf")
             console.log(result.data.data.categoryName)
-            console.log(result.data.data.setCategoryDetails)
            })
         .catch()
     }, [])
@@ -88,10 +108,38 @@ const UpdateCategory=()=>{
 return(
     <body>
     <div className="ad-cat">
+   
 
 
         <div className="sav-change">
+        
+ 
             <div className="text-center"><h3 > Update {categoryD.categoryName}</h3></div>
+            <div className="a-img"><label htmlFor="fileInput">
+            <div className="hihi-1"> 
+
+<div className="imi-1">
+  <div className="imi-2">
+  <img className="imimi1" src={'http://localhost:90/'+ categoryImage} 
+                  alt="post" />
+    
+
+
+</div>
+</div>
+
+</div>
+        <p className="pluss">+</p>
+        <p> Change Image</p>
+          </label>
+          <input
+            type="file"
+            id="fileInput"
+            style={{ display: "none" }}
+            onChange={(e) => setCategoryImage(e.target.files[0])}
+          /></div>
+<button onClick={changeImage}>Done</button>
+
             <form>      
               <input name="categoryName" type="text" class="feedback-input " placeholder="categoryName" value={categoryName} required onChange={(e)=>setCategoryName(e.target.value)}/>
 
@@ -115,8 +163,6 @@ return(
                          <h6 id="chose-cat" className="cate-cat pt-2">{categoryy.categoryName} <Link to={"/updatecate/" + categoryy._id}>nbsp; Update</Link> 
                             </h6>
                             </div>
-                            
-                            
                       
                         );
                     })}

@@ -91,9 +91,20 @@ const CategoryShowAdd = () => {
 
            <div className="sav-change">
                <div className="text-center"><h2 style={{color: "#9F2893",  textAlign: 'center' }} > Add Category</h2></div>
+               {categoryImage && (
+                <div className="imagebox"> 
 
+                  <div className="imagebox2">
+                <div className="imagebox3">
+                    <img className="imagebox4"  src={URL.createObjectURL(categoryImage)} alt="" />
+                </div>
+                </div>
+                </div>
+
+      )}
                   <form> 
-                                    <div className="a-img"><label htmlFor="fileInput">
+                          
+                          <div className="a-img"><label htmlFor="fileInput">
                           <p className="pluss">+</p>
                           <p>Image</p>
                             </label>
