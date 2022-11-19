@@ -65,9 +65,14 @@ const Login = () => {
 }
 
   return (
-    <div className="login ">
-      <video src='/videos/baggies.mp4' autoPlay loop muted />
+      <div className="login  ">
+      
+      {/* <video src='/videos/baggies.mp4' autoPlay loop muted /> */}
+      <div className='firstone'>
       <div className="loginsecond">
+        <div className='letstry'>    
+      <img src="/images/baggs.jpg" className="w-full h-full object-cover"></img>
+      </div>
         <div className="roww">
           <div className="topic">
             <p>{message}</p>
@@ -103,7 +108,34 @@ const Login = () => {
           </div>
         </div>
       </div>
+      </div>
     </div>
+
+
+    // <div className='w-full min-h-screen flex items-start'>
+    //   <div className='relative w-1/2 h-full flex flex-col'>
+    //     <div className='absoulte top-[25%] left-[10%] flex flex-col'>
+    //       <h1 className='text-4xl text-white font-bold my-4'>Turn Your Ideas into Reality</h1>
+    //       <p className='text-xl text-white font-normal'>Start Your Journey with Us</p>
+
+    //     </div>
+    //     <img src="/images/baggs.png" className="w-full h-full object-cover"></img>
+    //   </div>
+
+    //   <div className='w-1/2 h-full bg-[#f5f5f5] flex flex-col p-20 justify-between'>
+    //     <h1 className='text-xl text-[#060606] font-semibold'>brand</h1>
+
+    //     <div className='w-full flex flex-col'>
+    //       <h3 className='text-2xl font-semibold mb-4'>Login</h3>
+    //       <p className='text-sm mb-2'>Welcome Back! Please enter your details</p>
+    //     </div>
+    //   </div>
+    // </div>
+
+
+
+
+    
   );
 };
 
