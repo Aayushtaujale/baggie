@@ -58,133 +58,108 @@ const Register=()=>{
     
     return(
  
-        // <div className="containerfirst">
-        //       <div className='containersecond'>
-        //      <video src='/videos/video.mp4' autoPlay loop muted />
-        //     <div className="row">
-        //         <div className="col-md-9">
-        //         <br></br>
+        <div className="containerfirst">
+            {/* <img src="/images/registerbag.jpg" ></img>◘ */}
+        <div className='containersecond'>
+             {/* <video src='/videos/video.mp4' autoPlay loop muted /> */}
+            
+            <div className="row">
+                <div className="col-md-9">
+                <br></br>
 
-        //         <h2>Register</h2>
-        //         <br></br>
+                <h2 className='fonts'>Register</h2>
+                <br></br>
                 
                 
 
-        //         <p>{message}</p>
+                <p>{message}</p>
           
-        //     <form>
-        //     <div class="form-group">
+            <form>
+            <div class="form-group">
                
-        //         <label className='register-label' >Firstname</label>
+                <label className='register-label' >Firstname</label>
                
                 
-        //         <input type="text"
-        //           className="register-input" onChange={(e)=>setFirstname(e.target.value)}  placeholder="Firstname"/>
+                <input type="text"
+                  className="register-input" onChange={(e)=>setFirstname(e.target.value)}  placeholder="Firstname"/>
                
-        //     </div>
-        //     <br/>
+            </div>
+            <br/>
 
-        //     <div class="form-group">
+            <div class="form-group">
             
-        //         <label className='register-label' >Lastname</label>
+                <label className='register-label' >Lastname</label>
                 
 
-        //         <input type="text"
-        //           className="register-input" onChange={(e)=>setLastname(e.target.value)} placeholder="Lastname" />
+                <input type="text"
+                  className="register-input" onChange={(e)=>setLastname(e.target.value)} placeholder="Lastname" />
                 
             
-        //     </div>
-        //     <br/>
+            </div>
+            <br/>
 
-        //     <div class="form-group">
+            <div class="form-group">
             
-        //         <label className='register-label'>Contact</label>
+                <label className='register-label'>Contact</label>
                 
 
-        //         <input type="text"
-        //           className="register-input" onChange={(e)=>setNumber(e.target.value) } placeholder="Contact" />
+                <input type="text"
+                  className="register-inputss" onChange={(e)=>setNumber(e.target.value) } placeholder="Contact" />
                 
-        //     </div>
-        //     <br/>
+            </div>
+            <br/>
 
-        //     {/* <div class="form-group">
+          
+            <br/>
+
+            <div class="form-group">
             
-        //         <label className='register-label'>Address</label>
+                <label className='register-label'>Email</label>
                 
+                <input type="text"
+                  className="register-inputs" onChange={(e)=>setEmail(e.target.value)}
 
-        //         <input type="text"
-        //           className="register-input" placeholder="Address" />
+                  placeholder="Email"/>
                 
-        //     </div> */}
-        //     <br/>
-
-        //     <div class="form-group">
+            </div>
+            <br/>
+            <div class="form-group">
             
-        //         <label className='register-label'>Email</label>
+                <label className='register-label'>Password</label>
                 
-        //         <input type="text"
-        //           className="register-input" onChange={(e)=>setEmail(e.target.value)}
 
-        //           placeholder="Email"/>
+                <input type="text"
+                  className="register-input" onChange={(e)=>setPassword(e.target.value)}  placeholder="Password" />
                 
-        //     </div>
-        //     <br/>
-        //     <div class="form-group">
+            </div>
+            <br/>
+
             
-        //         <label className='register-label'>Password</label>
-                
-
-        //         <input type="text"
-        //           className="register-input" onChange={(e)=>setPassword(e.target.value)}  placeholder="Password" />
-                
-        //     </div>
-        //     <br/>
-
-        //     {/* <div class="form-group">
-            
-        //         <label className='register-label'>Confirm Password</label>
-                
-
-        //         <input type="text"
-        //           className="register-input"  placeholder="Confirm Password" />
-                
-        //     </div> */}
-        //     <br/>
+            <br/>
     
             
-        //     <button type="submit" className="btn btn-primary" onClick={registerCustomer}>Register</button>
+            <button type="submit" className="registerbtn" onClick={registerCustomer}>Register</button>
            
-        //     </form>
+            </form>
 
 
 
-        //         </div>
-        //         <div className='logosection'>
-        //     <img url=''></img>
-            
-            
-           
-        //     </div>
-                
-        //     </div>
-        //     </div>
-            
-        // </div>
-
-
-
-        <section className="signup">
-            <div className="container mt-5">
-                <div className="signup-content">
-                    <div className="signup-front">
-                        <h2 className='form-title'>Sign Up</h2>
-                        <form className='register-form' id='register-form'>
-                            <div className='form'></div>
-                        </form>
-                    </div>
                 </div>
+                <div className='logosection'>
+            <img url=''></img>
+            
+            
+           
             </div>
-        </section>
+                
+            </div>
+            </div>
+            
+        </div>
+
+
+
+
     )
 
 
