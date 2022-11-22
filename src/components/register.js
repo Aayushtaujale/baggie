@@ -59,14 +59,17 @@ const Register=()=>{
     return(
  
         <div className="containerfirst">
-              <div className='containersecond'>
-             <video src='/videos/video.mp4' autoPlay loop muted />
+            {/* <img src="/images/registerbag.jpg" ></img>◘ */}
+        <div className='containersecond'>
+             {/* <video src='/videos/video.mp4' autoPlay loop muted /> */}
+            
             <div className="row">
                 <div className="col-md-9">
                 <br></br>
 
-                <h2>Register</h2>
+                <h2 className='fonts'>Register</h2>
                 <br></br>
+                
                 
 
                 <p>{message}</p>
@@ -101,20 +104,12 @@ const Register=()=>{
                 
 
                 <input type="text"
-                  className="register-input" onChange={(e)=>setNumber(e.target.value) } placeholder="Contact" />
+                  className="register-inputss" onChange={(e)=>setNumber(e.target.value) } placeholder="Contact" />
                 
             </div>
             <br/>
 
-            {/* <div class="form-group">
-            
-                <label className='register-label'>Address</label>
-                
-
-                <input type="text"
-                  className="register-input" placeholder="Address" />
-                
-            </div> */}
+          
             <br/>
 
             <div class="form-group">
@@ -122,7 +117,7 @@ const Register=()=>{
                 <label className='register-label'>Email</label>
                 
                 <input type="text"
-                  className="register-input" onChange={(e)=>setEmail(e.target.value)}
+                  className="register-inputs" onChange={(e)=>setEmail(e.target.value)}
 
                   placeholder="Email"/>
                 
@@ -139,19 +134,11 @@ const Register=()=>{
             </div>
             <br/>
 
-            {/* <div class="form-group">
             
-                <label className='register-label'>Confirm Password</label>
-                
-
-                <input type="text"
-                  className="register-input"  placeholder="Confirm Password" />
-                
-            </div> */}
             <br/>
     
             
-            <button type="submit" className="btn btn-primary" onClick={registerCustomer}>Register</button>
+            <button type="submit" className="registerbtn" onClick={registerCustomer}>Register</button>
            
             </form>
 
@@ -169,6 +156,10 @@ const Register=()=>{
             </div>
             
         </div>
+
+
+
+
     )
 
 

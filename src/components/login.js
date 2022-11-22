@@ -2,10 +2,12 @@ import { useState } from 'react';
 import axios from 'axios';
 
 import '../styles/login.css';
-// import Fade from 'react-reveal/Fade';
+import Fade from 'react-reveal/Fade';
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Spin from 'react-reveal/Spin';
+import Wobble from 'react-reveal/Wobble';
 
 
 // -----------------------------------------------------
@@ -65,16 +67,30 @@ const Login = () => {
 }
 
   return (
-    <div className="login ">
-      <video src='/videos/baggies.mp4' autoPlay loop muted />
+    <div className="login">
+        <video src='/videos/background.mp4' autoPlay loop muted />
+      <div className="back">
+
+      
+      </div>
+      <div className='firstone'>
       <div className="loginsecond">
+        <div className='letstry'>    
+        <Spin>
+
+      <img src="/images/baggs.jpg" className="w-full h-full object-cover"></img>
+        </Spin>
+      </div>
         <div className="roww">
           <div className="topic">
             <p>{message}</p>
 
             <div>
+            <Fade left>
               <h1 className='topiclabel'>Login Here</h1>
+              </Fade>
             </div>
+            <Wobble>
             <form>
               <div class="formgroup">
                 <label className="login-label txtc">Email</label>
@@ -100,13 +116,16 @@ const Login = () => {
                 Login
               </button>
             </form>
+            </Wobble>
           </div>
         </div>
       </div>
+      </div>
     </div>
+
+
+    
   );
 };
 
 export default Login;
-
-//////////////////////////////
