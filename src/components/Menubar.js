@@ -104,7 +104,7 @@ const Menubar=()=>{
               <Link class="nav-link" to="/venuelogin">Login Admin               </Link>
               </li>
               <li className="nav__item">
-              <Link class="nav-link" to="/venue">Add Bags              </Link>
+              <Link class="nav-link" to="/addcategory">Add Bags              </Link>
               </li>
               <li className="nav__item">
               <Link class="nav-link" to="/Contact">Contact

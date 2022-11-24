@@ -6,4 +6,4 @@ Feature: Is add category successful?
     When I enter title
     When I enter description
     
-    Then I should see the bag
+    Then I should see the category

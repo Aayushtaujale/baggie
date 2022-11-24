@@ -2,8 +2,8 @@
 import './App.css';
 import Header from './components/Header';
 import Mid from './components/Mid';
-import CategoryShowAdd  from './components/add_category';
-import Login from "./components/login";
+// import CategoryShowAdd  from './components/add_category';
+// import Login from "./components/login";
 import {BrowserRouter} from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 

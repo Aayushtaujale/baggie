@@ -58,3 +58,27 @@ Given(
       .sendKeys("TestUser122323");
   });
   
+
+  Given(
+    "I visit Add Category Page",
+    { timeout: 1000 * 1000 },
+    async () => {
+      await driver.get("http://localhost:3000/admin/category");
+    }
+  );
+  When("I enter image", async () => {
+    await driver
+      .findElement(By.xpath("//input[@placeholder='Image']"))
+      .sendKeys("Test User");
+  });
+  When("I enter title", async () => {
+    await driver
+      .findElement(By.xpath("//input[@placeholder='Title']"))
+      .sendKeys("bag");
+  });
+  When("I enter description", async () => {
+    await driver
+      .findElement(By.xpath("//input[@placeholder='Description']"))
+      .sendKeys("bag added");
+  });
+  

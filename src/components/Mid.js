@@ -4,6 +4,7 @@ import Login from "./login";
 
 import CategoryShowAdd from "./add_category"
 import UpdateCategory from "./cat_update";
+import Venue from "./add_bag";
 const Mid=()=>{
     return(
         <Routes>
@@ -18,8 +19,9 @@ const Mid=()=>{
 
             
             <Route path="/register" element={<Register/>}/>
+            <Route path="/addbag" element={<Venue/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/addcategory" element={<CategoryShowAdd></CategoryShowAdd>}></Route>
+            <Route path="/addcategory" element={<CategoryShowAdd/>}/>
 
             <Route path="/updatecate/:pid" element={<UpdateCategory></UpdateCategory>}></Route>
             
