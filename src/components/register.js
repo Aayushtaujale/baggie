@@ -47,6 +47,7 @@ const Register=()=>{
                 
             setTimeout(() => {
               window.location.replace("/login");
+              notify("Registered success")
             }, 1000);
         })
         .catch(e=>{

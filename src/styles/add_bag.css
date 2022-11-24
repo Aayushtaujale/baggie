@@ -1,0 +1,46 @@
+.containers{
+     
+    /* background: url('/public/images/white.jpg') center center/cover no-repeat; */
+    height: 80vh;
+    width: 100%;
+    color: #e7ebda;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+
+
+}
+
+.shadow{
+     
+    background-image: url('../assets/registerbags.jpg');
+
+
+}
+
+.topics {
+    
+    margin-bottom: 10000px;
+    /* width: 100px;
+    padding-right: 200px;
+    margin-right: 900px;
+    padding-left: 20px; */
+   }
+
+   .logosection > img 
+    {
+        margin-left: 100px;
+        margin-top: -800px;
+        /* background: url('/public/images/logo2.png') center center/cover no-repeat; */
+    position:relative;
+    height: 80px;
+    width: 150px;
+    animation: rotation 2s infinite linear;
+    }
+
+    .labelname{
+        color:aliceblue;
+    }

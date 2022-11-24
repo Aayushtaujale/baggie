@@ -1,4 +1,4 @@
-
+// import { fab } from '@fortawesome/free-brands-svg-icons'
 import "../styles/add_category.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -26,11 +26,11 @@ const CategoryShowAdd = () => {
             formData.append("categoryDetails" , categoryDetails);
             formData.append("categoryImage" , categoryImage);
     
-            // const config = {
-            //     headers: {
-            //       Authorization: "Bearer " + localStorage.getItem("ticket"),
-            //     },
-            //   };
+            const config = {
+                headers: {
+                  Authorization: "Bearer " + localStorage.getItem("ticket"),
+                },
+              };
             axios
             .post("http://localhost:90/admin/addcategory",formData  )
             .then(response=>{

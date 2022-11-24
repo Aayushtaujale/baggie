@@ -59,13 +59,10 @@ video {
 .letstry{
   height:50px;
 
-  
   margin-left: -550px;
   margin-top: -70px;
 
-  
 
- 
   display: flex;
   flex-direction: column;
 
@@ -78,7 +75,7 @@ video {
   margin-bottom: 6px;
   color: #fff;
   margin-left: 100px;
-  margin-top: 5px;
+  margin-top: 1px;
 }
 
 .login-input {
@@ -87,9 +84,9 @@ video {
   outline: none;
   border-radius: 2px;
   height: 40px;
-  width: 60%;
+  width: 100%;
   border: none;
-  margin-left: 400px;
+  margin-left: 300px;
 }
 
 .txtc {
@@ -99,8 +96,8 @@ video {
 .login-input-btn {
   width: 20%;
   height: 50px;
-  margin-top: 40px;
-  margin-left: 490px;
+  margin-top: 1520px;
+  margin-left: 300px;
   border-radius: 2px;
   background: linear-gradient(
     90deg,
