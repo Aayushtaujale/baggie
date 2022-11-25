@@ -1,108 +1,176 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 /* admin cat div */
-.ad-cat{
-  
-    padding: 10vh 20vh 4.4vh ;
-    display: flex;
-    justify-content: space-between;
-background-color: white;
-
-
+.ad-cat {
+  padding: 10vh 20vh 4.4vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
 }
-#chose-cat{
+.up-cat {
+  margin-left: 390px;
+  padding: 10vh 20vh 4.4vh;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  background-color: white;
+}
+#chose-cat {
   display: flex;
   justify-content: space-between;
   /* background-color: rebeccapurple; */
 }
 
-#c-n{
-
+#c-n {
   /* background-color: red; */
   width: 50%;
 }
 
-#c-d{
+#c-d {
   padding-left: 2vh;
 }
 
-.sav-change{
-padding: 5vh;  
-width: 50%;
-height: 70%;
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.sav-change {
+  padding: 2vh;
+  width: 50%;
+  height: 70%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-
-    background-color: white
+  background-color: white;
 }
 
-
-
-
-.show-cat{
+.leftt {
+}
+.show-cat {
   box-shadow: 5px 10px;
 
-    padding: 5vh;  
-    height: 70vh; 
-    width: 30%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 5vh;
+  height: 70vh;
+  width: 30%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-    
-        background-color: white
-    }
-
-
-
-
-
+  background-color: white;
+}
 
 /* input for most of the pages */
-body { background:rgb(30,30,40); }
-form { max-width:420px; margin:50px auto; }
+body {
+  background: rgb(30, 30, 40);
+}
+form {
+  max-width: 420px;
+  margin: 20px auto;
+}
 
 .feedback-input {
   font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;
+  font-weight: 500;
   font-size: 18px;
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border:1px solid grey;
+  border: 1px solid grey;
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
-  width:100%;
+  width: 100%;
   box-sizing: border-box;
-  outline:0;
+  outline: 0;
 }
 
-.feedback-input:focus { border:2px solid #292b3a; }
+.feedback-input:focus {
+  border: 2px solid #292b3a;
+}
 
 textarea {
   height: 150px;
   line-height: 150%;
-  resize:vertical;
+  resize: vertical;
 }
 
 [type="submit"] {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   width: 30%;
-  background:#292b3a;
-  border-radius:5px;
-  border:0;
-  cursor:pointer;
-  color:white;
-  font-size:24px;
-  padding-top:5px;
-  padding-bottom:5px;
+  background: #292b3a;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
+  margin-top: -4px;
+  font-weight: 700;
 }
-[type="submit"]:hover { background:rgb(222, 146, 4) }
+[type="submit"]:hover {
+  background: rgb(222, 146, 4);
+}
 
-
-.nandi{
+.nandi {
   display: inline-block;
+}
+.writeSubmit {
+  background-color: #9f2893; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-left: 300px;
+  text-align: center;
+  margin-top: 0px;
+  display: inline-block;
+  font-size: 16px;
+}
+.writeupSubmit {
+  background-color: #9f2893; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-left: 250px;
+  text-align: center;
+  margin-top: 0px;
+  display: inline-block;
+  font-size: 16px;
+}
 
+.upimg {
+  width: 300px;
+  padding: 10px;
+  border: 5px solid rgb(0, 0, 0);
+  margin-left: 120px;
+  margin-top: 50px;
+  height: 220px;
+}
+/* .imagebox3 {
+  width: 220px;
+  padding: 10px;
+  background-color: aqua;
+  border: 5px solid rgb(0, 0, 0);
+  margin-left: 200px;
+  height: 220px;
+} */
 
+.pluss {
+  color: #9f2893;
+  font-size: 25px;
+}
+.writeInput {
+  margin: 5px;
+  font-size: 20px;
+  width: 400px;
+}
+.writeInputt {
+  margin: 5px;
+  font-size: 20px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+.icon {
+  color: #9f2893;
+  font-size: 20px;
+}
+.imagee {
+  margin-top: 20px;
+  font-style: bold;
+  font-size: 20px;
+  margin-left: 130px;
 }
