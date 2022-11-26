@@ -1,15 +1,4 @@
-/* video {
-  
-  object-fit:contain;
-  width: 150%;
-  height: 110%;
-  position:absolute;
-  z-index: -1;
-  
-  margin-left: -130px;
-  margin-top: -230px;
-  
-} */
+
 video {
   
   object-fit:cover;
@@ -17,7 +6,7 @@ video {
   height: 120%;
   position:absolute;
   z-index: -1;
-  /* margin-top: -200px; */
+
 
   
 }
@@ -30,13 +19,12 @@ video {
   background-repeat: no-repeat;
   /* color: rgb(0, 0, 0); */
   font-size: 30px;
-  /* background-image: url("/public/images/backgroundlogin.jpg"); */
-  /* background-color: rgb(187, 187, 155); */
+  
 }
 
 .loginsecond {
   
-  height: 78.5vh;
+  height: 82.5vh;
 
   margin-right: 50px;
   margin-left: 350px;
@@ -57,10 +45,10 @@ video {
 }
 
 .letstry{
-  height:50px;
+  height:190px;
 
   margin-left: -550px;
-  margin-top: -70px;
+  margin-top: -170px;
 
 
   display: flex;
@@ -75,7 +63,7 @@ video {
   margin-bottom: 6px;
   color: #fff;
   margin-left: 100px;
-  margin-top: 1px;
+  margin-top: -100px;
 }
 
 .login-input {
@@ -87,6 +75,7 @@ video {
   width: 100%;
   border: none;
   margin-left: 300px;
+  font-size: small;
 }
 
 .txtc {
@@ -135,6 +124,6 @@ video {
   transition: all 0.4s ease-out;
   color: #fff;
   margin-left: 400px;
-  margin-top: 100px;
+  margin-top: -100px;
 }
 

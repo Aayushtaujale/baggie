@@ -2,7 +2,7 @@ import '../styles/register.css';
 import { useState } from 'react';
 import axios from 'axios';
 import '../styles/register.css';
-// import Fade from 'react-reveal/Fade';
+import Fade from 'react-reveal/Fade';
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -58,12 +58,12 @@ const Register=()=>{
     
     
     return(
- 
+        <Fade top>
         <div className="containerfirst">
-            {/* <img src="/images/registerbag.jpg" ></img>◘ */}
-        <div className='containersecond'>
-             {/* <video src='/videos/video.mp4' autoPlay loop muted /> */}
             
+        <div className='containersecond'>
+            
+             
             <div className="row">
                 <div className="col-md-9">
                 <br></br>
@@ -146,17 +146,13 @@ const Register=()=>{
 
 
                 </div>
-                <div className='logosection'>
-            <img url=''></img>
-            
-            
-           
-            </div>
+                
                 
             </div>
             </div>
             
         </div>
+        </Fade>
 
 
 
