@@ -46,8 +46,8 @@ const Register=()=>{
             
                 
             setTimeout(() => {
+                notify("Registered success")
               window.location.replace("/login");
-              notify("Registered success")
             }, 1000);
         })
         .catch(e=>{
@@ -73,7 +73,7 @@ const Register=()=>{
                 
                 
 
-                <p>{message}</p>
+                
           
             <form>
             <div class="form-group">
@@ -150,6 +150,7 @@ const Register=()=>{
                 
             </div>
             </div>
+            <ToastContainer />
             
         </div>
         </Fade>

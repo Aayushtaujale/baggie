@@ -89,7 +89,7 @@ const Menubar=()=>{
               </Link></li>
 
               <li class="nav-item">
-              <Link class="nav-link" to="/venuelogin">Add Bags
+              <Link class="nav-link" to="/viewbag">Add Bags
               </Link>
               </li>
           

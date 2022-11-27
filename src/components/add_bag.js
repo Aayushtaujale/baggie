@@ -1,60 +1,71 @@
 import { useState } from 'react';
 import axios from 'axios';
+
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImage, faUpload } from "@fortawesome/free-solid-svg-icons";
 
 import '../styles/add_bag.css';
 import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce';
 
-const Venue=()=>{
-    const [name, setName] = useState('');
-    const [address,setAddress] = useState('');
-    const [phone,setPhone] = useState('');
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-
+const Addbag=()=>{
     const [message,setMessage] = useState('');
-    const notify = (message) => toast.success(message);
+    const [image, setImage] =useState('');
+    const [name, setName] = useState('');
+    const [price,setPrice] = useState('');
+    const [description,setDescription] = useState('');
 
-    const loginCustomer=(e)=>{
+
+    // const notify = (message) => toast.success(message);
+
+    const config ={
+        headers:{
+            Authorization:'Bearer'+localStorage.getItem('ticket')
+        },
+    };
+    const addBag=(e)=>{
        
         e.preventDefault();
-        if(name==="" || address==="" || phone==="" || email==="" || password===""){
+        if(name==="" || price==="" || description===""){
             toast.error("Error Validations Failed");
             return;
         }
-        const data = {
-            name : name,
-            address: address,
-            phone : phone,
-            email:email,
-            password:password
-        }
-        const config ={
-            headers:{
-                Authorization:'Bearer'+localStorage.getItem('ticket')
-            }
-        }
-        axios.post('http://localhost:90/bag/register',data)
-        .then(response=>{
+
+        const formData=new FormData();
+        formData.append("image",image)
+        formData.append("name",name);
+        formData.append("price",price);
+        formData.append("description",description);
+        
+        // const data = {
+        //     name : name,
+        //     price: price,
+        //     description : description,
+        //     image:image
+        // }
+        axios.post('http://localhost:90/bag/add',formData)
+            .then((response)=>{
             
-            setMessage(response.data.message);
-            console.log(response.data.message)
-            notify("Register Successful");
+            // setMessage(response.data.message);
+            // console.log(response.data.message)
+            toast.success("Bag succesfully added!");
+            
+           
             
                 
-            // setTimeout(() => {
-            //   window.location.replace("/venuelogin");
-            // }, 1000);
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
             
         })
         .catch(e=>{
-            toast.error("Invalid  credentials");
-            console.log(e)
+            console.log(e);
+            toast.error("Fill All Fields");
             
-        })
-    }
+        });
+    };
     
 
     return(
@@ -79,7 +90,7 @@ const Venue=()=>{
               >
                 
                 <Fade left big>
-                   <h1 className='labelname'>ADD RESTAURANTS</h1>
+                   <h1 className='labelname'>ADD BAGS</h1>
                    </Fade>
 
 
@@ -110,49 +121,78 @@ const Venue=()=>{
                 justifyContent: "center",
                
               }}>
-                <form>
-                <p>{message}</p>
+                 {image && (
+            <div className="imagebox">
+              <div className="imagebox2">
+                <div className="imagebox3">
+                  <img
+                    className="upimg"
+                    src={URL.createObjectURL(image)}
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+                <form className='bb'>
+                <div className="a-img">
+              <label htmlFor="fileInput">
+                <p className="imagee">
+                  Upload Image{" "}
+                  <FontAwesomeIcon className="icon" icon={faUpload} />
+                  {/* <p className="pluss">+</p> */}
+                </p>
+              </label>
+              <div className="">
+                <input
+                  type="file"
+                  id="fileInput"
+                  style={{ display: "none" }}
+                  onChange={(e) => setImage(e.target.files[0])}
+                />
+              </div>
+            </div>
+                
                 <Bounce top>
+                
+                <div className="form-groups">
+                            {/* <input type="file" className="form-control" onChange={(e)=>setImage(e.target.files[0])}/>
+                            <br/>
+                       
+                            <input type="submit" className="abc" /> */}
+
+
+                        </div>
+<br></br>
                 <div class="form-floating mb-4">
 
            
 
-                <label >Name</label>
-                <input type="text" className="form-control" onChange={(e)=>setName(e.target.value)} placeholder="Name"/>
+                <label >Bag Name</label>
+                <input type="text" className="form-control" onChange={(e)=>setName(e.target.value)} placeholder="Bag Name"/>
             </div>
             </Bounce>
 
-
+              <br></br>
 
 
             <Bounce bottom>
             <div class="form-floating mb-4">
-                <label>Address</label>
-                <input type="text" className="form-control"  onChange={(e)=>setAddress(e.target.value)} placeholder="Address" />
+                <label>Price</label>
+                <input type="text" className="form-control"  onChange={(e)=>setPrice(e.target.value)} placeholder="Price" />
             </div>
             </Bounce>
+            <br></br>
 
             <Bounce top>
             <div class="form-floating mb-4">
-                <label>Phone</label>
-                <input type="text" className="form-control"  onChange={(e)=>setPhone(e.target.value)} placeholder="Phone" />
+                <label>Description</label>
+                <input type="text" className="form-control"  onChange={(e)=>setDescription(e.target.value)} placeholder="Description" />
             </div>
             </Bounce>
+            <br></br>
 
-            <Bounce bottom>
-
-            <div class="form-floating mb-4">
-                <label>Email</label>
-                <input type="text" className="form-control"  onChange={(e)=>setEmail(e.target.value)} placeholder="Email" />
-            </div>
-            </Bounce>
-
-            <Bounce top>
-            <div class="form-floating mb-4">
-                <label>Password</label>
-                <input type="password" className="form-control"  onChange={(e)=>setPassword(e.target.value)} placeholder="Password" />
-            </div>
-            </Bounce>
+            
             <br/>
 
             
@@ -162,7 +202,7 @@ const Venue=()=>{
     
             <Bounce bottom>
             <div class="d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary" onClick={loginCustomer}>Add Restaurant</button>
+            <button type="submit" className="btn" onClick={addBag}>Add Bag</button>
             </div>
             </Bounce>
             </form>
@@ -189,7 +229,7 @@ const Venue=()=>{
                 
             </div>
             <Bounce left>
-            <div className='logosection'>
+            <div className='card-body'>
             <img url=''></img>
             
             
@@ -197,6 +237,7 @@ const Venue=()=>{
             </div>
             </Bounce>
             </div>
+            <ToastContainer />
             </div>
 
               
@@ -205,4 +246,4 @@ const Venue=()=>{
 
 }
 
-export default Venue;
+export default Addbag;
