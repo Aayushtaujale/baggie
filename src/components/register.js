@@ -5,9 +5,12 @@ import '../styles/register.css';
 import Fade from 'react-reveal/Fade';
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import FormCheckInput from 'react-bootstrap/esm/FormCheckInput';
 
 
 const Register=()=>{
+    
+
     const [firstname, setFirstname] = useState('');
     const [lastname,setLastname] = useState('');
     const [number,setNumber] = useState('');
@@ -54,6 +57,8 @@ const Register=()=>{
             toast.error("Invalid login credentials");
             console.log(e)
         })
+        
+      
     }
     
     
@@ -129,11 +134,21 @@ const Register=()=>{
                 <label className='register-label'>Password</label>
                 
 
-                <input type="text"
+                <input type="text" 
                   className="register-input" onChange={(e)=>setPassword(e.target.value)}  placeholder="Password" />
                 
             </div>
             <br/>
+
+            {/* <div class="form-group">
+            
+                <label className='register-label'>Confirm Password</label>
+                
+
+                <input type="text" 
+                  className="register-input" onChange={(e)=>setPassword(e.target.value)}  placeholder="Password" />
+                
+            </div> */}
 
             
             <br/>

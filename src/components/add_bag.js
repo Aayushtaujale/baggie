@@ -56,7 +56,7 @@ const Addbag=()=>{
             
                 
             setTimeout(() => {
-                window.location.reload();
+                window.location.replace("/viewadded_bags");
             }, 2000);
             
         })
