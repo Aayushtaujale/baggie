@@ -6,18 +6,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage, faUpload } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from "react-toastify";
+
+
 const CategoryShowAdd = () => {
-  const [categoryName, setCategoryName] = useState("");
   const [message, setMessage] = useState("");
-  const [categoryDetails, setCategoryDetails] = useState([]);
+
+  const [categoryName, setCategoryName] = useState("");
+  const [categoryDetails, setCategoryDetails] = useState("");
   const [categoryImage, setCategoryImage] = useState("");
 
   const [categoryList, setCategoryList] = useState([]);
-
+  
+  const config = {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("ticket"),
+      },
+    };
   const addCategory = (e) => {
     e.preventDefault();
 
-    console.warn(categoryName, categoryDetails, categoryImage);
+    // console.warn(categoryName, categoryDetails, categoryImage);
     // console.warn(title, content)
     const formData = new FormData();
 
@@ -25,30 +34,26 @@ const CategoryShowAdd = () => {
     formData.append("categoryDetails", categoryDetails);
     formData.append("categoryImage", categoryImage);
 
-    // const config = {
-    //     headers: {
-    //       Authorization: "Bearer " + localStorage.getItem("ticket"),
-    //     },
-    //   };
     axios
-      .post("http://localhost:90/admin/addcategory", formData)
+      .post("http://localhost:90/admin/addcategory", formData, config)
       .then((response) => {
         //see in console. data is stored in data:{token:.............}
-        setMessage(response.data.msg);
-
-        alert("Category succesfully posted!");
-
+        // setMessage(response.data.msg);
+        // alert("Category succesfully posted!");
+        
         window.location.reload();
+        toast.error("Category succesfully posted!");
       })
       .catch((e) => {
         console.log(e);
-        alert(" All fields required" + " Try again!");
+        toast.error(" All fields required");
+        // alert(" All fields required" + " Try again!");
       });
   };
 
   useEffect(() => {
     axios
-      .get("http://localhost:90/category/display")
+      .get("http://localhost:90/category/display", config)
       .then((result) => {
         console.log("category");
         console.log(result);
@@ -131,7 +136,7 @@ const CategoryShowAdd = () => {
               <textarea
                 placeholder="Description"
                 type="text"
-                className="writeInput writeText"
+                className="writeInputt"
                 onChange={(e) => setCategoryDetails(e.target.value)}
               ></textarea>
             </div>
@@ -139,7 +144,7 @@ const CategoryShowAdd = () => {
             <div className="pt-5">
               <div
                 className="pt-5"
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{ display: "flex" }}
               >
                 <button onClick={addCategory} className="writeSubmit">
                   {" "}
@@ -171,7 +176,7 @@ const CategoryShowAdd = () => {
                           deleteCategory(categoryy._id);
                         }}
                       >
-                        delete
+                        Delete
                       </a>
                     </h6>
                   </h6>
@@ -180,6 +185,7 @@ const CategoryShowAdd = () => {
             })}
           </div>
         </div>
+        <ToastContainer />
       </div>
     </body>
   );

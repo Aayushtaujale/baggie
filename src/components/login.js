@@ -5,12 +5,14 @@ import '../styles/login.css';
 import Fade from 'react-reveal/Fade';
 
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import Spin from 'react-reveal/Spin';
 import Wobble from 'react-reveal/Wobble';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 // -----------------------------------------------------
+
 const Login = () => {
   const notify = (message) => toast.success(message);
   const [email, setEmail] = useState("");
@@ -21,8 +23,9 @@ const Login = () => {
         
         
     e.preventDefault();
-    if(email==="" || password===""){
+    if(email===" " || password===" "){
         toast.error("Error Validations Failed");
+        notify("error Validations Failed");
         return;
     }
     const data = {
@@ -49,7 +52,7 @@ const Login = () => {
             }, 
             
             
-            2000);
+            6000);
             notify("Logged In")
             
         }
@@ -95,7 +98,7 @@ const Login = () => {
               <div class="formgroup">
                 <label className="login-label txtc">Email</label>
                 <input
-                  type="text"
+                  type="email"
                   className="login-input"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
@@ -121,6 +124,7 @@ const Login = () => {
         </div>
       </div>
       </div>
+      <ToastContainer />
     </div>
 
 
