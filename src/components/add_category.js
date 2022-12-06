@@ -136,7 +136,7 @@ const CategoryShowAdd = () => {
               <textarea
                 placeholder="Description"
                 type="text"
-                className="writeInput writeText"
+                className="writeInputt"
                 onChange={(e) => setCategoryDetails(e.target.value)}
               ></textarea>
             </div>
@@ -144,7 +144,7 @@ const CategoryShowAdd = () => {
             <div className="pt-5">
               <div
                 className="pt-5"
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{ display: "flex" }}
               >
                 <button onClick={addCategory} className="writeSubmit">
                   {" "}

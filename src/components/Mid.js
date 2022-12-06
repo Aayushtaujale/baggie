@@ -8,7 +8,8 @@ import Venue from "./add_bag";
 import View from "./view_bag";
 import Addbag from "./add_bag";
 import Viewbag from "./viewadded_bags";
-import { Bag } from "./custombag";
+import Picker from "./custombag";
+
 const Mid=()=>{
     return(
         <Routes>
@@ -19,7 +20,7 @@ const Mid=()=>{
             <Route path="/venues" element={<Venues/>}/>
             <Route path="/Contact" element={<ContactUs/>}/> */}
            
-           <Route path="/custombag" element={<Bag/>}/> 
+           <Route path="/custombag" element={<Picker/>}/> 
            <Route path="/viewadded_bags" element={<Viewbag/>}/>
            <Route path="/viewbag" element={<View/>}/>
             <Route path="/register" element={<Register/>}/>

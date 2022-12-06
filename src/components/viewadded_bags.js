@@ -62,6 +62,10 @@ const Viewbag = () => {
                   <span class="tag tag-teal" >Bag Details:</span>
                   
                   <p>{eachView.description}</p>
+                  <div className="custom">
+                  <Link to={"/"} class="tag tag-teal
+                  ">Customize</Link>
+                  </div>
                   <div className="links">
                   <Link to={"/"} class="tag tag-teal
                   ">BUY</Link>
