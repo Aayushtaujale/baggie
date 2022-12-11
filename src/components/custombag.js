@@ -45,6 +45,7 @@ function Shoe() {
 
   // Using the GLTFJSX output here to wire in app-state and hook up events
   return (
+    
     <group
       ref={ref}
       dispose={null}
@@ -52,6 +53,7 @@ function Shoe() {
       onPointerOut={(e) => e.intersections.length === 0 && set(null)}
       onPointerMissed={() => (state.current = null)}
       onPointerDown={(e) => (e.stopPropagation(), (state.current = e.object.material.name))}>
+    
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[0.01, 0.17, 0]} scale={3}></group>
@@ -98,6 +100,7 @@ function Picker() {
 export default function App() {
   return (
     <>
+    <div style={{height:'600px'}}>
       <Canvas concurrent pixelRatio={[1, 1.5]} camera={{ position: [0, 0, 2.75] }}>
         <ambientLight intensity={0.3} />
         <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
@@ -108,6 +111,7 @@ export default function App() {
         </Suspense>
         <OrbitControls minPolarAngle={-Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={false} enablePan={false} />
       </Canvas>
+      </div>
       <Picker />
     </>
   )

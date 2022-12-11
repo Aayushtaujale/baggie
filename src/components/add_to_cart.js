@@ -24,7 +24,7 @@ const Cart = () => {
           </h5>
           <table className="table table-light table-hover m-0">
             <tbody>
-              {view.map((item, index) => {
+              {items.map((item, index) => {
                 return (
                   <tr key={index}>
                     <td>
