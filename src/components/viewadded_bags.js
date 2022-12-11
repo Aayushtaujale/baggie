@@ -4,6 +4,7 @@ import "../styles/bag.css";
 import Flip from 'react-reveal/Flip';
 import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
+import { Button } from "bootstrap";
 
 const Viewbag = () => {
   const { addItem } = useCart();
@@ -69,8 +70,8 @@ const Viewbag = () => {
                   ">Customize</Link>
                   </div>
                   <div className="links">
-                  <Link to={"/"} class="tag tag-teal
-                  " onClick={() => addItem()}>ADD TO CART</Link>
+                  < p  class="tags
+                  " onClick={() => addItem(eachView)}>ADD TO CART</p>
                   </div>
                 </div>
               </div>
