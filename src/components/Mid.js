@@ -9,6 +9,7 @@ import View from "./view_bag";
 import Addbag from "./add_bag";
 import Viewbag from "./viewadded_bags";
 import Picker from "./custombag";
+import Cart from "./add_to_cart";
 
 const Mid=()=>{
     return(
@@ -19,7 +20,7 @@ const Mid=()=>{
             <Route path="/Home" element={<Home/>}/>
             <Route path="/venues" element={<Venues/>}/>
             <Route path="/Contact" element={<ContactUs/>}/> */}
-           
+           <Route path="/addtocart" element={<Cart/>}/> 
            <Route path="/custombag" element={<Picker/>}/> 
            <Route path="/viewadded_bags" element={<Viewbag/>}/>
            <Route path="/viewbag" element={<View/>}/>

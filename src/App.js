@@ -8,12 +8,13 @@ import {BrowserRouter} from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import { CartProvider } from "react-use-cart";
 
 function App() {
   return (
 
 
-
+<CartProvider>
     <BrowserRouter>
     
     <div>
@@ -25,6 +26,7 @@ function App() {
     </div>
 
     </BrowserRouter>
+    </CartProvider>
 //     <BrowserRouter>
 // <CategoryShowAdd ></CategoryShowAdd >
     
