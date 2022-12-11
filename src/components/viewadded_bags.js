@@ -44,6 +44,7 @@ const Viewbag = (props) => {
       <h1 className="heading">What's UP Baggie!!</h1>
       <div class="venues-container">
         {view.map((eachView) => {
+          eachView.id=eachView._id
             return (
                 <>
             <Flip right>
@@ -71,7 +72,7 @@ const Viewbag = (props) => {
                   </div>
                   <div className="links">
                   < p  class="tags
-                  " onClick={() => addItem(props.eachView)}>ADD TO CART</p>
+                  " onClick={() => addItem(eachView)}>ADD TO CART</p>
                   </div>
                 </div>
               </div>
