@@ -6,8 +6,6 @@ import { proxy } from "valtio";
 import { useProxy } from "valtio";
 import '../styles/customize.css';
 
-
-
 // Using a Valtio state model to bridge reactivity between
 // the canvas and the dom, both can write to it and/or react to it.
 const state = proxy({
@@ -31,9 +29,9 @@ function Shoe() {
   // Animate model
   useFrame((state) => {
     const t = state.clock.getElapsedTime()
-    ref.current.rotation.z = 0.1 - (1 + Math.sin(t / 1.5)) / 20
-    ref.current.rotation.x = Math.cos(t / 4) / 8
-    ref.current.rotation.y = Math.sin(t / 4) / 8
+    // ref.current.rotation.z = 0.1 - (1 + Math.sin(t / 1.5)) / 20
+    // ref.current.rotation.x = Math.cos(t / 4) / 8
+    // ref.current.rotation.y = Math.sin(t / 4) / 8
     ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10
   })
 
@@ -44,12 +42,10 @@ function Shoe() {
     const auto = `<svg width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(255, 255, 255, 0.5)" d="M29.5 54C43.031 54 54 43.031 54 29.5S43.031 5 29.5 5 5 15.969 5 29.5 15.969 54 29.5 54z" stroke="#000"/><path d="M2 2l11 2.947L4.947 13 2 2z" fill="#000"/></svg>`
     document.body.style.cursor = `url('data:image/svg+xml;base64,${btoa(hovered ? cursor : auto)}'), auto`
   }, [hovered])
-  
 
   // Using the GLTFJSX output here to wire in app-state and hook up events
   return (
-    
-    <group className='mains'
+    <group
       ref={ref}
       dispose={null}
       onPointerOver={(e) => (e.stopPropagation(), set(e.object.material.name))}
@@ -58,27 +54,27 @@ function Shoe() {
       onPointerDown={(e) => (e.stopPropagation(), (state.current = e.object.material.name))}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[0.01, 0.17, 0]} scale={2}></group>
-      <group position={[-1.78, -40.25, -49.28]}>
-              <mesh material-color={snap.items.baobao} geometry={nodes.Object_5.geometry} material={materials.baobao} />
+          <group position={[0.01, 0.17, 0]} scale={3}></group>
+      <group position={[-1.78, -70.25, -199.28]}>
+              <mesh material-color={snap.items.baobao} geometry={nodes.Object_5.geometry} material={materials.baobao} scale={[1.5,1.5,1.5]} />
             </group>
-      <group position={[0.78, -3.25, -99.27]}>
-              <mesh material-color={snap.items.budai} geometry={nodes.Object_7.geometry} material={materials.budai} />
-              <mesh material-color={snap.items.budai} geometry={nodes.Object_8.geometry} material={materials.budai} />
+      <group position={[65.78, -13.25, -179.27]}>
+              <mesh material-color={snap.items.budai} geometry={nodes.Object_7.geometry} material={materials.budai} scale={[1.5,1.5,1.5]} />
+              <mesh material-color={snap.items.budai} geometry={nodes.Object_8.geometry} material={materials.budai} scale={[1.5,1.5,1.5]}/>
             </group>
             {/* <group position={[-2.78, -71.25, -205.27]}>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_10.geometry} material={materials.daizi} />
+            <mesh material-color={snap.items.daizi} geometry={nodes.Object_10.geometry} material={materials.daizi} />
               <mesh material-color={snap.items.daizi} geometry={nodes.Object_11.geometry} material={materials.daizi} /> 
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_12.geometry} material={materials.daizi} />
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_13.geometry} material={materials.daizi} />
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_14.geometry} material={materials.daizi} />
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_15.geometry} material={materials.daizi} />
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_16.geometry} material={materials.daizi} />
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_17.geometry} material={materials.daizi} /> 
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_18.geometry} material={materials.daizi} />
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_19.geometry} material={materials.daizi} />
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_20.geometry} material={materials.daizi} />
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_21.geometry} material={materials.daizi} />
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_12.geometry} material={materials.daizi} scale={[2,2,2]}/>
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_13.geometry} material={materials.daizi} scale={[2,2,2]}/>
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_14.geometry} material={materials.daizi} scale={[2,2,2]}/>
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_15.geometry} material={materials.daizi} scale={[2,2,2]}/>
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_16.geometry} material={materials.daizi} scale={[2,2,2]}/>
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_17.geometry} material={materials.daizi} scale={[2,2,2]}/>
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_18.geometry} material={materials.daizi} scale={[2,2,2]}/>
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_19.geometry} material={materials.daizi} scale={[2,2,2]}/>
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_20.geometry} material={materials.daizi} scale={[2,2,2]}/>
+              <mesh material-color={snap.items.daizi} geometry={nodes.Object_21.geometry} material={materials.daizi} scale={[2,2,2]}/>
             </group> */}
             </group>
             </group>
@@ -86,7 +82,6 @@ function Shoe() {
         
    
     </group>
-  
   )
 }
 
@@ -104,15 +99,14 @@ export default function App() {
   return (
     <>
       <Canvas concurrent pixelRatio={[1, 1.5]} camera={{ position: [0, 0, 2.75] }}>
-      
         <ambientLight intensity={0.3} />
-        <spotLight intensity={0.3} angle={20} penumbra={1} position={[5, 25, 20]} />
+        <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
         <Suspense fallback={null}>
           <Shoe />
           <Environment files="royal_esplanade_1k.hdr" />
-          <ContactShadows rotation-x={Math.PI / 2} position={[0, -0.8, 0]} opacity={0.25} width={100} height={100} blur={2} far={1} />
+          <ContactShadows rotation-x={Math.PI / 2} position={[0, -0.8, 0]} opacity={0.25} width={10} height={10} blur={2} far={1} />
         </Suspense>
-        <OrbitControls minPolarAngle={-Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={true} enablePan={true} enableRotate={true}/>
+        <OrbitControls minPolarAngle={-Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={false} enablePan={false} />
       </Canvas>
       <Picker />
     </>
