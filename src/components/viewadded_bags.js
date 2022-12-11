@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import { Button } from "bootstrap";
 
-const Viewbag = () => {
+const Viewbag = (props) => {
   const { addItem } = useCart();
 
   const [view, setView] = useState([]);
@@ -66,12 +66,12 @@ const Viewbag = () => {
                   
                   <p>{eachView.description}</p>
                   <div className="custom">
-                  <Link to={"/"} class="tag tag-teal
+                  <Link to={"/custombag"} class="tag tag-teal
                   ">Customize</Link>
                   </div>
                   <div className="links">
                   < p  class="tags
-                  " onClick={() => addItem(eachView)}>ADD TO CART</p>
+                  " onClick={() => addItem(props.eachView)}>ADD TO CART</p>
                   </div>
                 </div>
               </div>
