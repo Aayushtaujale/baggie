@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Footer.css';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
-import { fontSize } from '@mui/system';
+// import { fontSize } from '@mui/system';
 
 function Footer() {
   return (

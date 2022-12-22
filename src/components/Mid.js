@@ -25,6 +25,7 @@ const Mid=()=>{
             <Route path="/venues" element={<Venues/>}/>
             <Route path="/Contact" element={<ContactUs/>}/> */}
             <Route path="/Home" element={<Home/>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/Contact" element={<ContactUs/>}/>
         <Route path="/addtocart" element={<Cart />} />
         <Route path="/custombag" element={<Picker />} />

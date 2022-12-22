@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from "react-use-cart";
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     <div>
       <Header></Header>  
       <Mid></Mid>
+      <Footer></Footer>
       
 
     
