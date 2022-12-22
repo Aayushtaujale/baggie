@@ -40,23 +40,26 @@ const Login = () => {
             localStorage.setItem('ticket',response.data.token);
             localStorage.setItem('userType','Customer');
             
-            // window.location.replace('/profile');
+    
             
             
-            setTimeout(() => {
+            setTimeout(
+              () => {
                
-              window.location.replace("/addcategory");
+              window.location.replace("/addbag");
               notify("Logged In")
               
               
             }, 
             
             
-            6000);
+            1000);
             notify("Logged In")
             
         }
         else{
+
+
             
             setMessage("Invalid login credentials");
         }
@@ -71,7 +74,7 @@ const Login = () => {
 
   return (
     <div className="login">
-        <video src='/videos/background.mp4' autoPlay loop muted />
+        <video className='videoss' src='/videos/background.mp4' autoPlay loop muted />
       <div className="back">
 
       

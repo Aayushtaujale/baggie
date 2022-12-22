@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 const Menubar=()=>{
+  
   const notify = (message) => toast.success(message);
   const logOut = () => {
     // Log Out function
@@ -69,6 +70,8 @@ const Menubar=()=>{
             <li class="nav">
               <Link class="nav-link" to="/register">Register
               </Link></li>
+
+            
       
       </>
     )
@@ -85,11 +88,15 @@ const Menubar=()=>{
 
             
           <li class="nav-item">
-              <Link class="nav-link" to="/venues"> Home
+              <Link class="nav-link" to="/Home"> Home
               </Link></li>
 
               <li class="nav-item">
               <Link class="nav-link" to="/viewbag">Add Bags
+              </Link>
+              </li>
+              <li class="nav-item">
+              <Link class="nav-link" to="/viewadded_bags">Bags
               </Link>
               </li>
           
@@ -102,13 +109,19 @@ const Menubar=()=>{
 
              
 
+            
               
 
             <li class="nav-item">
               <Link class="nav-link" to="/Contact">Contact
               </Link>
             </li>
-
+            <li class="nav-item">
+              <Link class="nav-link" to="/addtocart">Cart
+              </Link></li>
+            <br/>
+            <br/>
+            
            
             {menu}
             
