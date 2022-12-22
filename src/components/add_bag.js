@@ -229,7 +229,7 @@ const Addbag=()=>{
                 
             </div>
             <Bounce left>
-            <div className='card-body'>
+            <div className='cards-body'>
             <img url=''></img>
             
             

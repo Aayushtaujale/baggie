@@ -5,15 +5,57 @@ import Flip from 'react-reveal/Flip';
 import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import { Button } from "bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+import { useParams } from "react-router-dom";
+
 
 const Viewbag = (props) => {
+  const params = useParams();
+    const notify = (message) => toast.success(message);
+    const [venueid,setVenueid] = useState('');
+    const [name, setName] = useState('');
+  // const notify = (message) => toast.success(message);
+  
   const { addItem } = useCart();
+  // notify("Added To Cart")
+
+//   const config ={
+//     headers:{
+//         Authorization:'Bearer '+localStorage.getItem('ticket')
+//     }
+// }
+
+//   const Viewbag=(e)=>{
+//     e.preventDefault();
+//     const data = {
+//         venueid: params.id,
+//         name : name,
+    
+//     }
+    
+//     axios.post('http://localhost:90/booking/book',data, config)
+//     .then(response=>{
+//         console.log(response);
+//         // setMessage(response.data.message);
+//         console.log(response.data.message)
+//         notify("Added to cart Successfully");
+            
+        
+        
+//     })
+//     .catch(e=>{
+//         console.log(e)
+//     })
+//   }
+
+
+  
 
   const [view, setView] = useState([]);
   useEffect(() => {
     displayBag();
   }, []);
-
+  
 
 
   const displayBag = async () => {
@@ -31,7 +73,7 @@ const Viewbag = (props) => {
         console.log(e);
       });
 
-      
+    
 
   
   };
@@ -84,6 +126,7 @@ const Viewbag = (props) => {
         })}
       </div>
     </div>
+    <ToastContainer />
         </div>
   );
 };

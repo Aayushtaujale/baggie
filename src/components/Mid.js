@@ -11,6 +11,10 @@ import Viewbag from "./viewadded_bags";
 import Picker from "./custombag";
 import Cart from "./add_to_cart";
 import Khalti from "./khalti";
+import Home from "./Home";
+import ContactUs from "./Contact";
+import DisplayBooking from "./displaybookings";
+import Booking from "./booking";
 
 const Mid=()=>{
     return (
@@ -20,6 +24,9 @@ const Mid=()=>{
             <Route path="/Home" element={<Home/>}/>
             <Route path="/venues" element={<Venues/>}/>
             <Route path="/Contact" element={<ContactUs/>}/> */}
+            <Route path="/Home" element={<Home/>}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/Contact" element={<ContactUs/>}/>
         <Route path="/addtocart" element={<Cart />} />
         <Route path="/custombag" element={<Picker />} />
         <Route path="/viewadded_bags" element={<Viewbag />} />
@@ -29,6 +36,8 @@ const Mid=()=>{
         <Route path="/login" element={<Login />} />
         <Route path="/addcategory" element={<CategoryShowAdd />} />
         <Route path="/payment" element={<Khalti />} />
+        <Route path="/displaybookings" element={<DisplayBooking />} />
+        <Route path="/booking" element={<Booking />} />
 
         <Route
           path="/updatecate/:pid"

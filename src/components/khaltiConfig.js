@@ -1,6 +1,10 @@
 import myKey from "./khaltiKey";
 import axios from "axios";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
 
+
+const notify = (message) => toast.success(message);
 let config = {
   // replace this key with yours
   publicKey: myKey.publicTestKey,
@@ -10,11 +14,27 @@ let config = {
   eventHandler: {
     onSuccess(payload) {
       // hit merchant api for initiating verfication
+      
       console.log(payload);
-      let data = {
-        token: payload.token,
-        amount: payload.amount,
-      };
+
+      setTimeout(
+        () => {
+          
+          notify("Payment Successful")
+          window.location.replace("/displaybookings");
+          
+          
+          
+        }, 
+        
+        
+        2000);
+        notify("Payment Successful")
+        let data = {
+          token: payload.token,
+          amount: payload.amount,
+        };
+        <ToastContainer />
 
       let config = {
         headers: {

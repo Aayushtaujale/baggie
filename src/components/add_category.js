@@ -176,7 +176,7 @@ const CategoryShowAdd = () => {
                           deleteCategory(categoryy._id);
                         }}
                       >
-                        Delete
+                          
                       </a>
                     </h6>
                   </h6>
