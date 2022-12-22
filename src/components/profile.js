@@ -76,7 +76,8 @@ const Profile=()=>{
                   
                     <p>Name: {customerdata.firstname} {customerdata.lastname}</p>
                     <p>Email: {customerdata.email}</p>
-                    <p>Age: {customerdata.age}</p>
+                    <p>Number: {customerdata.number}</p>
+                    {/* <p>Address: {customerdata.address}</p> */}
 
                     <p><Link to="/updateprofile">Update profile</Link></p>
                 </div>

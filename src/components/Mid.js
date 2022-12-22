@@ -15,6 +15,7 @@ import Home from "./Home";
 import ContactUs from "./Contact";
 import DisplayBooking from "./displaybookings";
 import Booking from "./booking";
+import Profile from "./profile";
 
 const Mid=()=>{
     return (
@@ -38,7 +39,9 @@ const Mid=()=>{
         <Route path="/payment" element={<Khalti />} />
         <Route path="/displaybookings" element={<DisplayBooking />} />
         <Route path="/booking" element={<Booking />} />
+        {/* <Route path="/updateprofile" element={<Update/> }/> */}
 
+        <Route path="/profile" element={<Profile/> }/>
         <Route
           path="/updatecate/:pid"
           element={<UpdateCategory></UpdateCategory>}
