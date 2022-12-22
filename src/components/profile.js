@@ -71,8 +71,11 @@ const Profile=()=>{
                 </div>
                 <div className="details">
                 <div class="col-md-6">
+                    <div className="col-md-9">
+
                     
-                    <p><img src={'http://localhost:90/'+customerdata.picture} className="img-thumbnail" /></p>
+                    <p ><img src={'http://localhost:90/'+customerdata.picture} className="img-thumbnail" /></p>
+                    </div>
                   
                     <p>Name: {customerdata.firstname} {customerdata.lastname}</p>
                     <p>Email: {customerdata.email}</p>

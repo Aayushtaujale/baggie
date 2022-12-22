@@ -12,7 +12,7 @@ const Update=()=>{
     const[customerdata,setcustomerData] =useState('');
     const[firstname, setFirstname]=useState('');
     const[lastname, setLastname]=useState('');
-    const[age, setAge]=useState('');
+    const[number, setNumber]=useState('');
     const[email, setEmail]=useState('');
     // const[password, setPassword]=useState('');
    
@@ -24,14 +24,14 @@ const Update=()=>{
 
     const updPro=(e)=>{
         e.preventDefault();
-        if(firstname==="" || lastname==="" || age==="" || email===""){
+        if(firstname==="" || lastname==="" || number==="" || email===""){
             toast.error("Error Validations Failed");
             return;
         }
         const data = {
             firstname:firstname,
             lastname:lastname,
-            age:age,
+            number:number,
             email:email,
         }
         axios.put("http://localhost:90/customer/update",data,config)
@@ -40,7 +40,7 @@ const Update=()=>{
                 
                 setTimeout(() => {
                   window.location.replace("/profile");
-                  
+                //   notify("Profile Updated")
                 }, 
                 
                 2000);
@@ -58,7 +58,7 @@ const Update=()=>{
             console.log(result.data.data);
             setFirstname(result.data.data.firstname);
             setLastname(result.data.data.lastname);
-            setAge(result.data.data.age);
+            setNumber(result.data.data.number);
             setEmail(result.data.data.email);
             // setPassword(result.data.data.password);
             // setcustomerData(result.data.data);
@@ -84,17 +84,19 @@ const Update=()=>{
                 <label >Firstname</label>
                 <input type="text" className="form-control" value={firstname} onChange={e=>{setFirstname(e.target.value)}}/>
             </div>
+            <br></br>
 
             <div class="form-group">
                 <label >Lastname</label>
                 <input type="text" className="form-control" value={lastname} onChange={e=>{setLastname(e.target.value)}} />
             
             </div>
-
+            <br></br>
             <div class="form-group">
-                <label >Age</label>
-                <input type="text" className="form-control" value={age} onChange={e=>{setAge(e.target.value)}} />
+                <label >Number</label>
+                <input type="text" className="form-control" value={number} onChange={e=>{setNumber(e.target.value)}} />
             </div>
+            <br></br>
             <div class="form-group">
                 <label>Email</label>
                 <input type="text" className="form-control" value={email} onChange={e=>{setEmail(e.target.value)}} />
@@ -107,6 +109,7 @@ const Update=()=>{
 
                 </div>
             </div>
+            <ToastContainer />
             
         </div>
     )

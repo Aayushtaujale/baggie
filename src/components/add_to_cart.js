@@ -1,5 +1,6 @@
 import React from "react";
 import { useCart } from "react-use-cart";
+import'../styles/cart.css';
 
 const Cart = () => {
   const buynow=(e)=>{
@@ -25,10 +26,14 @@ const Cart = () => {
     emptyCart,
   } = useCart();
 
+{/* <div className="cart"> */}
 
-  if (isEmpty) return <h1 className="text-center">Your card is Empty</h1>;
+  if (isEmpty) return <h1 className="text-center"><br></br>Your card is <br></br>Empty<br></br> <br></br> .</h1>;
+{/* </div> */}
 
   return (
+    
+
     <section className="py-4 container">
       <div className="row justify-content-center">
         <div className="col-12">
@@ -51,7 +56,7 @@ const Cart = () => {
                       onClick={() =>
                         updateItemQuantity(item.id, item.quantity - 1)
                       }
-                    >
+                      >
                       -
                     </button>
                     <button
@@ -59,7 +64,7 @@ const Cart = () => {
                       onClick={() =>
                         updateItemQuantity(item.id, item.quantity + 1)
                       }
-                    >
+                      >
                       +
                     </button>
                     <button
@@ -86,6 +91,7 @@ const Cart = () => {
         </div>
       </div>
     </section>
+       
   );
 };
 
