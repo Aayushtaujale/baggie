@@ -2,6 +2,18 @@ import React from "react";
 import { useCart } from "react-use-cart";
 
 const Cart = () => {
+  const buynow=(e)=>{
+    setTimeout(() => {
+               
+      window.location.replace("/booking");
+      
+      
+      
+    });
+  }
+  
+
+
   const {
     isEmpty,
     totalUniqueItems,
@@ -12,6 +24,7 @@ const Cart = () => {
     removeItem,
     emptyCart,
   } = useCart();
+
 
   if (isEmpty) return <h1 className="text-center">Your card is Empty</h1>;
 
@@ -61,15 +74,15 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div className="col-auto ms-auto">
+        {/* <div className="col-auto ms-auto">
           <h2> Total: Rs. {cardTotal}</h2>
-        </div>
+        </div> */}
         <div className="col-auto">
           <button className="btn btn-danger m-2" onClick={() => emptyCart()}>
             {" "}
             Clear Cart
           </button>
-          <button className="btn btn-primary"> Buy Now</button>
+          <button className="btn btn-primary" onClick={() => buynow()}> Buy Now</button>
         </div>
       </div>
     </section>
