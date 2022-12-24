@@ -92,6 +92,12 @@ const Viewbag = (props) => {
             <Flip right>
               <div class="cards">
                 <div class="cards-header">
+
+                <Link to={"/bagg/single/" + eachView._id}><img id="post-img" 
+                
+                src={'http://localhost:90/'+ eachView.image} 
+                            alt="post" class="cover"/> </Link>
+
                 <img src={'http://localhost:90/'+eachView.image} className="img-thumbnail" />
                 </div>
 
