@@ -134,7 +134,7 @@ const Register=()=>{
                 <label className='register-label'>Password</label>
                 
 
-                <input type="text" 
+                <input type="password" 
                   className="register-input" onChange={(e)=>setPassword(e.target.value)}  placeholder="Password" />
                 
             </div>
