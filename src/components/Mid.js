@@ -17,6 +17,7 @@ import DisplayBooking from "./displaybookings";
 import Booking from "./booking";
 import Profile from "./profile";
 import Update from "./updateprofile";
+import Venuelogin from "./venuelogin";
 
 
 const Mid=()=>{
@@ -42,7 +43,7 @@ const Mid=()=>{
         <Route path="/displaybookings" element={<DisplayBooking />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/updateprofile" element={<Update/> }/>
-
+        <Route path="/venuelogin" element={<Venuelogin/> }/>
         <Route path="/profile" element={<Profile/> }/>
        
         <Route
