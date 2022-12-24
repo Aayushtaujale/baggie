@@ -23,8 +23,7 @@ function App() {
       <Mid></Mid>
       <Footer></Footer>
       
-
-    
+   
     </div>
 
     </BrowserRouter>

@@ -47,7 +47,7 @@ const Mid=()=>{
         <Route path="/profile" element={<Profile/> }/>
 
 
-        <Route path="/bagg/single/:pid" element={<SingleProduct/> }/>
+        <Route path="/bagg/single/:pid" element={<SingleProduct></SingleProduct>}></Route>
 
        
         <Route
