@@ -18,6 +18,7 @@ import Booking from "./booking";
 import Profile from "./profile";
 import Update from "./updateprofile";
 
+
 const Mid=()=>{
     return (
       <Routes>
@@ -43,6 +44,7 @@ const Mid=()=>{
         <Route path="/updateprofile" element={<Update/> }/>
 
         <Route path="/profile" element={<Profile/> }/>
+       
         <Route
           path="/updatecate/:pid"
           element={<UpdateCategory></UpdateCategory>}
