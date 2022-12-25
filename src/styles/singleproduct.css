@@ -18,9 +18,10 @@ html, body {
     width: 90%;
     height: 100% ;
  }
+ 
 
     .cards-headerr{
-        width: 100%;
+        width: 40%;
 
     }
 
@@ -58,6 +59,7 @@ html, body {
 
   #centerrr{
     justify-content: center;
+    text-align: justify;
   }
   .product-description span {
     font-size: 12px;
@@ -182,13 +184,122 @@ html, body {
 
 #innn{
     width: 50%;
+    height: 50px;
+    padding: 5px;
+    color: black;
 }
 
+.write{
+  width: 100px;
+  height: 50px;
+  background-color: black;
+  color: orange;
+}
+
+
+.write:hover{
+  width: 100px;
+  height: 50px;
+  color: white;
+  background-color: orange;
+  border-color: orange;
+}
 
 
 .dateee{
   font-size: 12px;
   color: grey;
 }
+
+
+
+
+
+
+.containerrr {
+  overflow: hidden;
+  height: 10vh;
+}
+
+.box-contentt {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+
+#descriptionn{
+  font-size: 12px;
+  color: white;
+
+  text-decoration: none;
+
+
+}
+
+
+
+
+
+.rightt {
+  /* background-color: rgb(176, 157, 157); */
+  width: 100%;
+  min-height: 100%;
+  padding: 10vh 2vh 0 2vh;
+}
+
+
+.commentho {
+  min-height: 100%;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  padding: 5vh 0vh;
+}
+
+
+
+.addComments {
+  height: 10vh;
+  padding: 2VH;
+}
+.addComments {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding: px 0;
+}
+
+
+
+.linkkk{
+  display: flex;
+  justify-content: center;
+}
+
+
+.linkkk .tags{
+  height: 60px;
+  width: 25%;
+  background-color: black;
+
+}
+
+
+.linkkk .tags:hover{
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+  
+}
+
+
+.c-section{
+  padding-bottom: 20px;
+}
+
 
 

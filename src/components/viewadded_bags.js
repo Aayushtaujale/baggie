@@ -113,9 +113,25 @@ const Viewbag = (props) => {
                 
                   <p>{eachView.price}</p>
                   <br/>
+                  <span>
                   <span class="tag tag-teal" >Bag Details:</span>
+
+                  <div className="read-more-container">
+                    <div className="containerrr">
+                      
+
+                    <div className="box-content-content">
+                      
+                    <Link to={"/bagg/single/" + eachView._id}> <p className="box-contentt text-light" id="descriptionn" style={{color: "white"}}>{eachView.description}</p></Link>
+                    </div>
+                    
+
+                    </div>
+                
+                    </div>
+                  </span>
                   
-                  <p>{eachView.description}</p>
+                  
                   <div className="custom">
                   <Link to={"/custombag"} class="tag tag-teal
                   ">Customize</Link>

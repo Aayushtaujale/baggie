@@ -64,9 +64,16 @@
   height: 300px;
 }
 
+
+
+.cards-header{
+  width: 100%;
+  height: 100%;
+}
+
 .cards-header img {
   width: 100%;
-  height: 500px;
+  height: 80%;
   object-fit: cover;
 }
 

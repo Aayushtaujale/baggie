@@ -42,30 +42,37 @@ const commentpost=(e)=>{
       
 
     };
+    if(commentt!=""){
+      axios
+      .post("http://localhost:90/comment/"+pid, data , config)
 
-    
+      .then(response=>{
+
         
-        axios
-        .post("http://localhost:90/comment/"+pid, data , config)
-        
-        .then(response=>{
-            //see in console. data is stored in data:{token:.............}
-            
-           
-            setMessage(response.data.msg); 
-            console.log("data")
-            console.log(data)
+        setMessage(response.data.msg); 
+        console.log("data")
+        console.log(data)
 
 
-                alert (response.data.msg);
-                window.location.reload();
-            
-        })
-        .catch(e=>{
-            console.log(e)
-            alert (" All fields required" + " Try again!")
-        })
+            alert (response.data.msg);
+            window.location.reload();
+          
+      })
     }
+
+    else{
+      alert("Field cannot be empty!")
+
+    }
+
+
+
+  }
+    
+      
+
+
+
 
   
   useEffect(()=>{
@@ -132,16 +139,23 @@ useEffect(()=>{
 </div>
 
 <div class="product-price">
-  <span>{bagdetails.price}</span>
+  <span> Price: <span style={{color: "orange"}}> Rs.{bagdetails.price}</span></span>
+ 
   
-  <a href="#" class="cart-btn" onClick={() => addItem(bagdetails)}> Add to cart</a>
+  {/* <a class="cart-btn" onClick={() => addItem(bagdetails._id)}> Add to cart</a> */}
 </div>
+<br></br>
+
+<div className="linkkk"  style={{display: "flex"}}>
+                  < p  class="tags  
+                  " onClick={() => addItem(bagdetails._id)}><br></br> &nbsp; &nbsp; &nbsp; &nbsp; ADD TO CART</p>
+                  </div>
 </div>
+
  </div>
+ 
 
 </div>
-</main>
-
 <div className="bottomm">
         
 <div className="rightt">
@@ -192,6 +206,19 @@ useEffect(()=>{
         </div>
 
 </div>
+
+</main>
+
+
+
+
+
+
+
+{/*  */}
+
+
+
     </div>
     
      
