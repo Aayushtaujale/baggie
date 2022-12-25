@@ -18,7 +18,7 @@ import Booking from "./booking";
 import Profile from "./profile";
 import Update from "./updateprofile";
 import Venuelogin from "./venuelogin";
-
+import SingleProduct from "./singleProduct";
 
 const Mid=()=>{
     return (
@@ -45,6 +45,10 @@ const Mid=()=>{
         <Route path="/updateprofile" element={<Update/> }/>
         <Route path="/venuelogin" element={<Venuelogin/> }/>
         <Route path="/profile" element={<Profile/> }/>
+
+
+        <Route path="/bagg/single/:pid" element={<SingleProduct></SingleProduct>}></Route>
+
        
         <Route
           path="/updatecate/:pid"

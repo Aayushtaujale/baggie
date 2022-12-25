@@ -15,15 +15,18 @@ const Viewbag = (props) => {
     const [venueid,setVenueid] = useState('');
     const [name, setName] = useState('');
   // const notify = (message) => toast.success(message);
+
+  const [commentt, setComment]=useState("");
+
   
   const { addItem } = useCart();
   // notify("Added To Cart")
+  const config = {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("ticket"),
+    },
+  };
 
-//   const config ={
-//     headers:{
-//         Authorization:'Bearer '+localStorage.getItem('ticket')
-//     }
-// }
 
 //   const Viewbag=(e)=>{
 //     e.preventDefault();
@@ -49,7 +52,7 @@ const Viewbag = (props) => {
 //   }
 
 
-  
+
 
   const [view, setView] = useState([]);
   useEffect(() => {
@@ -60,7 +63,7 @@ const Viewbag = (props) => {
 
   const displayBag = async () => {
     return await axios
-      .get("http://localhost:90/bags/all")
+      .get("http://localhost:90/bags/all", config)
       .then((response) => {
         // setMessage(response.data.message);
         const { data, success } = response.data;
@@ -92,7 +95,12 @@ const Viewbag = (props) => {
             <Flip right>
               <div class="cards">
                 <div class="cards-header">
-                <img src={'http://localhost:90/'+eachView.image} className="img-thumbnail" />
+
+                <Link to={"/bagg/single/" + eachView._id}><img id="post-img" 
+                
+                src={'http://localhost:90/'+ eachView.image} 
+                            alt="post" class="cover"/> </Link>
+
                 </div>
 
                 <div class="cards-body">
