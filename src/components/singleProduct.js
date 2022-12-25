@@ -169,7 +169,10 @@ useEffect(()=>{
           return (
             <div className="c-section">
                 <div className="com-com">
-                <div><p className="text-info">{comments.customerId.firstname} {comments.customerId.lastname}  </p>  <p>{comments.comment}</p></div>
+                <div className="namedate"><span className="text-info">{comments.customerId.firstname} {comments.customerId.lastname} &nbsp; &nbsp; &nbsp; &nbsp; <span className="dateee"> {comments.date} </span> </span>  <p>{comments.comment}</p>
+                
+                
+                </div>
 
                     </div>
                     
