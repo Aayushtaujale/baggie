@@ -6,6 +6,12 @@ import { proxy } from "valtio";
 import { useProxy } from "valtio";
 import '../styles/customize.css';
 
+import {render}  from 'react-dom';
+import * as htmlToImage from 'html-to-image';
+import * as THREE from 'three';
+
+
+
 // Using a Valtio state model to bridge reactivity between
 // the canvas and the dom, both can write to it and/or react to it.
 const state = proxy({
@@ -43,64 +49,70 @@ function Shoe() {
     document.body.style.cursor = `url('data:image/svg+xml;base64,${btoa(hovered ? cursor : auto)}'), auto`
   }, [hovered])
 
+
+
   // Using the GLTFJSX output here to wire in app-state and hook up events
   return (
+   
+   
     
-    <group
-      ref={ref}
+    <group 
+      ref={ref} 
       dispose={null}
       onPointerOver={(e) => (e.stopPropagation(), set(e.object.material.name))}
       onPointerOut={(e) => e.intersections.length === 0 && set(null)}
       onPointerMissed={() => (state.current = null)}
       onPointerDown={(e) => (e.stopPropagation(), (state.current = e.object.material.name))}>
+      
+     
     
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[0.01, 0.17, 0]} scale={3}></group>
-      <group position={[-1.78, -70.25, -199.28]}>
-              <mesh material-color={snap.items.baobao} geometry={nodes.Object_5.geometry} material={materials.baobao} scale={[1.5,1.5,1.5]} />
+
+   
+
+         
+      <group position={[-1.78, -70.25, -199.28]} name="main">
+              <mesh material-color={snap.items.baobao} geometry={nodes.Object_5.geometry} material={materials.baobao} scale={[1.5,1.5,1.5]}/>
             </group>
       <group position={[65.78, -13.25, -179.27]}>
               <mesh material-color={snap.items.budai} geometry={nodes.Object_7.geometry} material={materials.budai} scale={[1.5,1.5,1.5]} />
               <mesh material-color={snap.items.budai} geometry={nodes.Object_8.geometry} material={materials.budai} scale={[1.5,1.5,1.5]}/>
             </group>
-            {/* <group position={[-2.78, -71.25, -205.27]}>
-            <mesh material-color={snap.items.daizi} geometry={nodes.Object_10.geometry} material={materials.daizi} />
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_11.geometry} material={materials.daizi} /> 
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_12.geometry} material={materials.daizi} scale={[2,2,2]}/>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_13.geometry} material={materials.daizi} scale={[2,2,2]}/>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_14.geometry} material={materials.daizi} scale={[2,2,2]}/>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_15.geometry} material={materials.daizi} scale={[2,2,2]}/>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_16.geometry} material={materials.daizi} scale={[2,2,2]}/>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_17.geometry} material={materials.daizi} scale={[2,2,2]}/>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_18.geometry} material={materials.daizi} scale={[2,2,2]}/>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_19.geometry} material={materials.daizi} scale={[2,2,2]}/>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_20.geometry} material={materials.daizi} scale={[2,2,2]}/>
-              <mesh material-color={snap.items.daizi} geometry={nodes.Object_21.geometry} material={materials.daizi} scale={[2,2,2]}/>
-            </group> */}
+         
+          
             </group>
             </group>
           
         
    
     </group>
+          
+    
   )
 }
 
 function Picker() {
   const snap = useProxy(state)
   return (
+    
+      
     <div style={{ display: snap.current ? "block" : "none" }}>
       <HexColorPicker className="picker" color={snap.items[snap.current]} onChange={(color) => (state.items[snap.current] = color)} />
-      <h1>{snap.current}</h1>
+      {/* <h1>{snap.current}</h1> */}
     </div>
+    
   )
 }
 
 export default function App() {
+  var node = document.getElementsByName("main")
+
   return (
     <>
-    <div style={{height:'600px'}}>
+    
+    <div style={{height:'600px'}} >
       <Canvas concurrent pixelRatio={[1, 1.5]} camera={{ position: [0, 0, 2.75] }}>
         <ambientLight intensity={0.3} />
         <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
@@ -113,6 +125,22 @@ export default function App() {
       </Canvas>
       </div>
       <Picker />
+      <div className="App">
+        <button onClick={()=>{
+          htmlToImage.toJpeg(node)
+          .then(function(dataUrl){
+            var img = new Image()
+            img.src = dataUrl
+            document.body.appendChild(img)
+          })
+          .catch((error)=>{
+            console.log(error)
+          })
+        }}>
+          Save
+        </button>
+      </div>
+      
     </>
   )
 }

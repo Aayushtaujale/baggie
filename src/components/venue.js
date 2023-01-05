@@ -17,7 +17,7 @@ const Venue=()=>{
     const [message,setMessage] = useState('');
     const notify = (message) => toast.success(message);
 
-    const loginCustomer=(e)=>{
+    const loginAdmin=(e)=>{
        
         e.preventDefault();
         if(name==="" || address==="" || phone==="" || email==="" || password===""){
@@ -115,38 +115,38 @@ const Venue=()=>{
 
            
 
-                <label >Name</label>
+                <label className='color'>Name</label>
                 <input type="text" className="form-control" onChange={(e)=>setName(e.target.value)} placeholder="Name"/>
             </div>
             </Bounce>
 
 
-
+<br></br>
             <Bounce bottom>
             <div class="form-floating mb-4">
-                <label>Address</label>
+                <label className='color'>Address</label>
                 <input type="text" className="form-control"  onChange={(e)=>setAddress(e.target.value)} placeholder="Address" />
             </div>
             </Bounce>
-
+            <br></br>
             <Bounce top>
             <div class="form-floating mb-4">
-                <label>Phone</label>
+                <label className='color'>Phone</label>
                 <input type="text" className="form-control"  onChange={(e)=>setPhone(e.target.value)} placeholder="Phone" />
             </div>
             </Bounce>
-
+            <br></br>
             <Bounce bottom>
 
             <div class="form-floating mb-4">
-                <label>Email</label>
+                <label className='color'>Email</label>
                 <input type="text" className="form-control"  onChange={(e)=>setEmail(e.target.value)} placeholder="Email" />
             </div>
             </Bounce>
-
+            <br></br>
             <Bounce top>
             <div class="form-floating mb-4">
-                <label>Password</label>
+                <label className='color'>Password</label>
                 <input type="password" className="form-control"  onChange={(e)=>setPassword(e.target.value)} placeholder="Password" />
             </div>
             </Bounce>
@@ -159,7 +159,7 @@ const Venue=()=>{
     
             <Bounce bottom>
             <div class="d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary" onClick={loginCustomer}>Add Restaurant</button>
+            <button type="submit" className="btn btn-primary" onClick={loginAdmin}>Register</button>
             </div>
             </Bounce>
             </form>
@@ -194,6 +194,7 @@ const Venue=()=>{
             </div>
             </Bounce>
             </div>
+            <ToastContainer />
             </div>
 
               

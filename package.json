@@ -20,6 +20,10 @@
     "cors": "^2.8.5",
     "emailjs-com": "^3.2.0",
     "express": "^4.18.1",
+    "file-saver": "^2.0.5",
+    "gltf-import-export": "^1.0.22",
+    "html-to-image": "^1.11.4",
+    "html2canvas": "^1.4.1",
     "khalti-checkout-web": "^2.2.0",
     "nodemailer": "^6.7.7",
     "react": "^18.2.0",
@@ -34,6 +38,8 @@
     "react-toastify": "^9.1.1",
     "react-use-cart": "^1.13.0",
     "three": "^0.147.0",
+    "three-gltf-exporter": "^0.0.1",
+    "use-react-screenshot": "^3.0.0",
     "valtio": "^0.4.8"
   },
   "scripts": {

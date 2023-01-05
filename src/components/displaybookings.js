@@ -50,15 +50,20 @@ const DisplayBooking = () => {
       <div className="row">
         
         {bookingDetails.map((singleBooking) => {
+          console.log(singleBooking)
           return (
             <div className="col-md-4">
                <Fade top big>
                <div className="maintheme">
             
                <p> Order ID: {singleBooking._id}</p>
-              <p> Name: {singleBooking.name}</p>
-              <p> Address: {singleBooking.address}</p>
-              <p> Number: {singleBooking.number}</p>
+              <p> Bag Name: {singleBooking.items[0].bagid.name??"name"}</p>
+              <p> Price: {singleBooking.items[0].bagid.price??"price"}</p>
+              <p> Quantity: {singleBooking.items[0].quantity}</p>
+           
+
+
+              <p >Image:    <img src={'http://localhost:90/'+singleBooking.items[0].bagid.image??"image"} className="img-thumbnail" /></p>
               {/* <div className="btn1"> */}
               {/* <Link to={"/updatebooking/" + singleBooking._id}>Update</Link> */}
               {/* </div> */}

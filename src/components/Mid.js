@@ -4,7 +4,7 @@ import Login from "./login";
 
 import CategoryShowAdd from "./add_category"
 import UpdateCategory from "./cat_update";
-import Venue from "./add_bag";
+// import Venue from "./add_bag";
 import View from "./view_bag";
 import Addbag from "./add_bag";
 import Viewbag from "./viewadded_bags";
@@ -19,6 +19,11 @@ import Profile from "./profile";
 import Update from "./updateprofile";
 import Venuelogin from "./venuelogin";
 import SingleProduct from "./singleProduct";
+import Venue from "./venue";
+import VenueDashboard from "./venuedashboard";
+import PrivateRoute from "./ProtectedRoute";
+import PrivateRouteVenue from "./ProtectedRouteVenue";
+import TryButton from "./try";
 
 const Mid=()=>{
     return (
@@ -31,30 +36,60 @@ const Mid=()=>{
             <Route path="/Home" element={<Home/>}/>
             <Route path="/" element={<Home/>}/>
             <Route path="/Contact" element={<ContactUs/>}/>
-        <Route path="/addtocart" element={<Cart />} />
+        <Route path="/addtocart" element={
+        <PrivateRoute>
+          <Cart />
+          </PrivateRoute>
+          } />
         <Route path="/custombag" element={<Picker />} />
         <Route path="/viewadded_bags" element={<Viewbag />} />
         <Route path="/viewbag" element={<View />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/addbag" element={<Addbag />} />
+        
+        <Route path="/addbag" element={
+         <PrivateRouteVenue>
+         <Addbag />
+         </PrivateRouteVenue>} />
+        
         <Route path="/login" element={<Login />} />
-        <Route path="/addcategory" element={<CategoryShowAdd />} />
+        <Route path="/addcategory" element={
+         
+          <CategoryShowAdd />
+         } />
         <Route path="/payment" element={<Khalti />} />
-        <Route path="/displaybookings" element={<DisplayBooking />} />
+        <Route path="/displaybookings" element={
+            <PrivateRoute>
+            <DisplayBooking/>
+            </PrivateRoute>
+            }/>
         <Route path="/booking" element={<Booking />} />
-        <Route path="/updateprofile" element={<Update/> }/>
+        <Route path="/updateprofile" element={
+            <PrivateRoute>
+            <Update/>
+            </PrivateRoute>
+            }/>
         <Route path="/venuelogin" element={<Venuelogin/> }/>
-        <Route path="/profile" element={<Profile/> }/>
+        <Route path="/profile" element={
+            <PrivateRoute>
+            <Profile/>
+            </PrivateRoute>}/>
 
 
         <Route path="/bagg/single/:pid" element={<SingleProduct></SingleProduct>}></Route>
-
-       
+        <Route path="/venue" element={<Venue/>}/>
+        <Route path="/try" element={<TryButton/>}/>
+        <Route path="/venuedashboard" element={<VenueDashboard/>}/>
+        <Route path="/booking/:id" element={
+                <PrivateRoute>
+                <Booking/>
+                </PrivateRoute>
+            }/>
         <Route
           path="/updatecate/:pid"
           element={<UpdateCategory></UpdateCategory>}
         ></Route>
       </Routes>
+      
     );
 }
 

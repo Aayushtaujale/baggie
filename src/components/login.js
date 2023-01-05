@@ -46,7 +46,7 @@ const Login = () => {
             setTimeout(
               () => {
                
-              window.location.replace("/addbag");
+              window.location.replace("/viewadded_bags");
               notify("Logged In")
               
               

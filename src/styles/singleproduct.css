@@ -11,6 +11,7 @@ html, body {
     margin: 0 auto;
     padding: 15px 0 0 0 ;
     display: flex;
+    height: auto;
   }
 
   #single {
@@ -166,19 +167,23 @@ html, body {
 
 
   .bottomm{
-    height: 500px;
+    height: 100%;
     width: 100%;
+    margin-top: -20px;
+    
 }
 
 
 .show-comments{
     display: flex;
     justify-content: center;
+    height:fit-content
 }
 
 .addComments{
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 
@@ -251,10 +256,12 @@ html, body {
 
 
 .commentho {
+  margin-top: 20px;
   min-height: 100%;
-  width: 100%;
+  height: fit-content;
+  width: auto;
   background-color: rgb(245, 245, 245);
-  padding: 5vh 0vh;
+  /* padding: 4vh 0vh; */
 }
 
 
@@ -299,6 +306,7 @@ html, body {
 
 .c-section{
   padding-bottom: 20px;
+
 }
 
 

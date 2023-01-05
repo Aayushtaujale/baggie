@@ -44,3 +44,12 @@
     .labelname{
         color:aliceblue;
     }
+
+    .color{
+        color: black;
+        margin-left: 15px;
+    }
+
+    .btn-primary{
+        margin-left: 150px;
+    }

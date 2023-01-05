@@ -5,8 +5,15 @@ import Slide from 'react-reveal/Slide';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from "react-router-dom";
-
+import { useCart } from "react-use-cart";
 const Booking=()=>{
+
+    const {
+        
+        items,
+        
+      } = useCart();
+
     const params = useParams();
     const notify = (message) => toast.success(message);
     // const [bagid,setBagid] = useState('');
@@ -31,13 +38,13 @@ const Booking=()=>{
         }
 
         const data = {
-            bagid: params.id,
+            item: items,
             name : name,
             address:address,
             number:number,
         
         }
-        
+        console.log(items)
         axios.post('http://localhost:90/booking/buy',data, config)
         .then(response=>{
             console.log(response);

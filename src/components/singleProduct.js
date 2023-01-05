@@ -7,6 +7,7 @@ import { useCart } from "react-use-cart";
 import { Button } from "bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { useParams } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const SingleProduct = () => {
@@ -49,13 +50,27 @@ const commentpost=(e)=>{
       .then(response=>{
 
         
-        setMessage(response.data.msg); 
-        console.log("data")
-        console.log(data)
+        // setMessage(response.data.msg); 
+        // console.log("data")
+        // console.log(data)
+        // toast.success("Comment Successful");
+        notify("Comment Successful")
 
 
-            alert (response.data.msg);
+        setTimeout(
+          () => {
+           
+          
             window.location.reload();
+          notify("Comment Successful")
+          
+          
+        }, 
+        
+        
+        1000);
+        // notify("Comment Successful")
+            // alert (response.data.msg);
           
       })
     }
@@ -218,7 +233,7 @@ useEffect(()=>{
 {/*  */}
 
 
-
+<ToastContainer />
     </div>
     
      

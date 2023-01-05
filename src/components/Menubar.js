@@ -32,7 +32,10 @@ const Menubar=()=>{
     menu=(
       <>
      
-
+     <li class="nav-item">
+              <Link class="nav-link" to="/viewbag">Add Bags
+              </Link>
+              </li>
               <li class="nav-item">
               <Link class="nav-link" to="/profile">Profile
               </Link>
@@ -90,10 +93,7 @@ const Menubar=()=>{
               <Link class="nav-link" to="/Home"> Home
               </Link></li>
 
-              <li class="nav-item">
-              <Link class="nav-link" to="/viewbag">Add Bags
-              </Link>
-              </li>
+              
               <li class="nav-item">
               <Link class="nav-link" to="/viewadded_bags">Bags
               </Link>
@@ -105,6 +105,9 @@ const Menubar=()=>{
               <Link class="nav-link" to="/venuelogin">Admin Login
               </Link></li>
 
+              <li class="nav-item">
+              <Link class="nav-link" to="/venue">Register Admin
+              </Link></li>
 
              
 

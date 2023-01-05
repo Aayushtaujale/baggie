@@ -20,6 +20,7 @@ const Viewbag = (props) => {
 
   
   const { addItem } = useCart();
+
   // notify("Added To Cart")
   const config = {
     headers: {
@@ -104,34 +105,36 @@ const Viewbag = (props) => {
                 </div>
 
                 <div class="cards-body">
+                  <br/>
                   <span class="tag tag-teal" >Bag Name:</span>
                   
                   <h5>{eachView.name} </h5>
-                  <br></br>
-                  <br/>
+                  
+                  
                   <span class="tag tag-teal" >Bag Price:</span>
                 
                   <p>{eachView.price}</p>
-                  <br/>
-                  <span>
+                  
+                 
                   <span class="tag tag-teal" >Bag Details:</span>
 
-                  <div className="read-more-container">
+              
                     <div className="containerrr">
                       
 
                     <div className="box-content-content">
                       
-                    <Link to={"/bagg/single/" + eachView._id}> <p className="box-contentt text-light" id="descriptionn" style={{color: "white"}}>{eachView.description}</p></Link>
+                    <p >{eachView.description}</p>
                     </div>
                     
 
                     </div>
                 
-                    </div>
-                  </span>
+                   
+                  <br/>
                   
-                  
+                  <div className="size">
+
                   <div className="custom">
                   <Link to={"/custombag"} class="tag tag-teal
                   ">Customize</Link>
@@ -139,6 +142,7 @@ const Viewbag = (props) => {
                   <div className="links">
                   < p  class="tags
                   " onClick={() => addItem(eachView)}>ADD TO CART</p>
+                  </div>
                   </div>
                 </div>
               </div>

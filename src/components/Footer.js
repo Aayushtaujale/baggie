@@ -18,7 +18,7 @@ function Footer() {
           You can visit us at any time.
         </p>
         
-        <div className='input-areas'>
+        {/* <div className='input-areas'>
           <form>
             <input
               className='footer-input'
@@ -28,7 +28,7 @@ function Footer() {
             />
             <Button className="connect" buttonStyle='btn--outline'>Connect</Button>
           </form>
-        </div>
+        </div> */}
       </section>
       <div class='footer-links'>
         <div className='footer-link-wrapper'>
