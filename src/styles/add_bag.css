@@ -70,6 +70,6 @@
         background-color:rgb(151, 123, 123);
     }
 
-    .form-groups{
-        margin-top: 20px;
+    .form-floating{
+        margin-top: -100px;
     }

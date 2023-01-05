@@ -35,7 +35,7 @@ const View = () => {
   return (
     <div
       class="venue-body">
-      <h1>Available Category</h1>
+      <h1 className="h1">Available Category</h1>
       <div class="venue-container">
         {view.map((eachView) => {
           return (

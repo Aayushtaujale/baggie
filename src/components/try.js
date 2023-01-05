@@ -12,8 +12,8 @@
 // import {render}  from 'react-dom';
 // import * as htmlToImage from 'html-to-image';
 // import * as THREE from 'three';
-
-
+// import { useControls, button, folder } from 'leva'
+// import { Raytracer } from '@react-three/lgl'
 // // Using a Valtio state model to bridge reactivity between
 // // the canvas and the dom, both can write to it and/or react to it.
 // const state = proxy({
@@ -22,6 +22,7 @@
 //     daizi: "#ffffff",
 //     budai: "#ffffff",
 //     baobao: "#ffffff",
+
  
 //   },
 // });
@@ -117,29 +118,36 @@
  
 // // var node = document.getElementById("id");
 
-// const { enabled, dpr, ...props } = useControls({
-//   enabled: true,
-//   movingDownsampling: true,
-//   useTileRender: false,
-//   dpr: { value: 1.5, min: 0.5, max: 2, step: 0.5 },
-//   samples: { value: 128, min: 8, max: 2048, step: 8 },
-//   bounces: { value: 4, min: 1, max: 10, step: 1 },
-//   envMapIntensity: { value: 0.7, min: 0, max: 1 },
-//   denoise: folder({
-//     enableDenoise: false,
-//     enableTemporalDenoise: true,
-//     enableSpatialDenoise: true,
-//     denoiseColorBlendFactor: { value: 0.5, min: 0, max: 1 },
-//     denoiseMomentBlendFactor: { value: 0.5, min: 0, max: 1 },
-//     denoiseColorFactor: { value: 0.1, min: 0, max: 1 },
-//     denoisePositionFactor: { value: 0.1, min: 0, max: 1 }
-//   })
-// })
+// // const { enabled, dpr, ...props } = useControls({
+// //   enabled: true,
+// //   movingDownsampling: true,
+// //   useTileRender: false,
+// //   dpr: { value: 1.5, min: 0.5, max: 2, step: 0.5 },
+// //   samples: { value: 128, min: 8, max: 2048, step: 8 },
+// //   bounces: { value: 4, min: 1, max: 10, step: 1 },
+// //   envMapIntensity: { value: 0.7, min: 0, max: 1 },
+// //   denoise: folder({
+// //     enableDenoise: false,
+// //     enableTemporalDenoise: true,
+// //     enableSpatialDenoise: true,
+// //     denoiseColorBlendFactor: { value: 0.5, min: 0, max: 1 },
+// //     denoiseMomentBlendFactor: { value: 0.5, min: 0, max: 1 },
+// //     denoiseColorFactor: { value: 0.1, min: 0, max: 1 },
+// //     denoisePositionFactor: { value: 0.1, min: 0, max: 1 }
+// //   })
+// // })
 //   return (
 //     <>
     
 //     <div style={{height:'600px'}} >
-//       <Canvas concurrent pixelRatio={[1, 1.5]} camera={{ position: [0, 0, 2.75] }}>
+//       <Canvas   concurrent pixelRatio={[1, 1.5]} camera={{ position: [0, 0, 2.75] }}>
+//       {/* {enabled ? (
+//           <Raytracer toneMapping={THREE.ACESFilmicToneMapping} {...props}>
+//             <Shoe />
+//           </Raytracer>
+//         ) : (
+//           <Shoe />
+//         )} */}
 //         <ambientLight intensity={0.3} />
 //         <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
 //         <Suspense fallback={null}>
@@ -152,7 +160,7 @@
 //       </div>
 //       <Picker />
 //       <div className="App">
-//         <button onClick={()=>{
+//         {/* <button onClick={()=>{
 //           htmlToImage.toJpeg(node)
 //           .then(function(dataUrl){
 //             var img = new Image()
@@ -164,7 +172,14 @@
 //           })
 //         }}>
 //           Save
-//         </button>
+//         </button> */}
+
+
+
+
+
+
+
 //       </div>
       
 //     </>

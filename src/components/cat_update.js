@@ -2,7 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import '../styles/catupdate.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const UpdateCategory = () => {
+  const notify = (message) => toast.success(message);
   const { pid } = useParams();
   const [categoryName, setCategoryName] = useState([]);
   const [categoryDetails, setCategoryDetails] = useState([]);
@@ -10,8 +15,15 @@ const UpdateCategory = () => {
   const [categoryId, setId] = useState("");
   const [categoryD, setCategoryD] = useState([]);
   const [cate, setCate] = useState([]);
+
+
   const changeImage = (e) => {
-    console.log(categoryImage);
+    if(categoryName===" " || categoryDetails===" "){
+      toast.error("Error Validations Failed");
+      notify("error Validations Failed");
+      return;
+  }
+    
     e.preventDefault();
     const form = new FormData();
     form.append("id", categoryId);
@@ -40,6 +52,10 @@ const UpdateCategory = () => {
   }, []);
   const updatec = (e) => {
     e.preventDefault();
+
+
+    
+
     const data = {
       categoryName: categoryName,
       categoryDetails: categoryDetails,
@@ -47,18 +63,25 @@ const UpdateCategory = () => {
       // blogImage:blogImage
     };
     console.log(data);
-    if (categoryName != "") {
+   
       axios.put("http://localhost:90/cat/update", data).then((result) => {
         console.log(result);
-        alert("Category updated!");
-        window.location.reload();
+       
+
+         setTimeout(() => {
+           
+          toast.success("Category updated!");
+            
+              
+            }, 
+            window.location.reload(),
+            5000);
+            toast.success("Category updated!");
         //   window.location.reload();
         // setTitle(result.data.data.title);
         // setContent(result.data.data.content);
       });
-    } else {
-      alert("Field cannot be empty!");
-    }
+    
   };
   useEffect(() => {
     axios
@@ -99,35 +122,35 @@ const UpdateCategory = () => {
                   </div>
                 </div>
               </div>
-              <p className="pluss">+</p>
-              {/* <p> Change Image</p> */}
+              {/* <p className="pluss">+</p>
+              <p> Change Image</p> */}
             </label>
-            <input
+            {/* <input
               type="file"
               id="fileInput"
               style={{ display: "none" }}
               onChange={(e) => setCategoryImage(e.target.files[0])}
-            />
+            /> */}
           </div>
-          <button style={{ backgroundcolor: "#9F2893" }} onClick={changeImage}>
+          {/* <button className="change" style={{ backgroundcolor: "#9F2893" }} onClick={changeImage}>
             Change Image
-          </button>
+          </button> */}
           <form>
             <input
               name="categoryName"
               type="text"
               class="feedback-input "
-              placeholder="categoryName"
-              value={categoryName}
+              placeholder="Category Name"
+              
               required
               onChange={(e) => setCategoryName(e.target.value)}
             />
             <input
-              name="categoryDetails"
+              name="Category Details"
               type="text"
               class="feedback-input "
-              placeholder="categoryName"
-              value={categoryDetails}
+              placeholder="Category Details"
+           
               required
               onChange={(e) => setCategoryDetails(e.target.value)}
             />
@@ -146,9 +169,9 @@ const UpdateCategory = () => {
         {/* This is the right side of the page where categories are shown------------------------------------------------------------------------------------------------------------------------------ */}
         <div className="show-cat">
           <div>
-            <h2 style={{ color: "#9F2893", textAlign: "center" }}>
+            <h3 style={{ color: "#9F2893", textAlign: "center" }}>
               Categories
-            </h2>
+            </h3>
             {cate.map((categoryy) => {
               return (
                 <div className="">
@@ -160,6 +183,7 @@ const UpdateCategory = () => {
               );
             })}
           </div>
+         <ToastContainer />
         </div>
       </div>
     </body>

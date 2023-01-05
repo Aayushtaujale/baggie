@@ -74,7 +74,7 @@ function Shoe() {
 
          
       <group position={[-1.78, -70.25, -199.28]} name="main">
-              <mesh material-color={snap.items.baobao} geometry={nodes.Object_5.geometry} material={materials.baobao} scale={[1.5,1.5,1.5]}/>
+              <mesh getElementById material-color={snap.items.baobao} geometry={nodes.Object_5.geometry} material={materials.baobao} scale={[1.5,1.5,1.5]}/>
             </group>
       <group position={[65.78, -13.25, -179.27]}>
               <mesh material-color={snap.items.budai} geometry={nodes.Object_7.geometry} material={materials.budai} scale={[1.5,1.5,1.5]} />
@@ -98,7 +98,7 @@ function Picker() {
   return (
     
       
-    <div style={{ display: snap.current ? "block" : "none" }}>
+    <div  style={{ display: snap.current ? "block" : "none" }}>
       <HexColorPicker className="picker" color={snap.items[snap.current]} onChange={(color) => (state.items[snap.current] = color)} />
       {/* <h1>{snap.current}</h1> */}
     </div>
@@ -107,20 +107,22 @@ function Picker() {
 }
 
 export default function App() {
-  var node = document.getElementsByName("main")
+  var node = document.getElementById("hello")
 
   return (
     <>
-    
+    <div >
     <div style={{height:'600px'}} >
-      <Canvas concurrent pixelRatio={[1, 1.5]} camera={{ position: [0, 0, 2.75] }}>
+      <Canvas concurrent pixelRatio={[1, 1.5]} camera={{ position: [0, 0, 2.75] }} >
         <ambientLight intensity={0.3} />
         <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
-        <Suspense fallback={null}>
+       
+        <Suspense fallback={null} >
           <Shoe />
           <Environment files="royal_esplanade_1k.hdr" />
           <ContactShadows rotation-x={Math.PI / 2} position={[0, -0.8, 0]} opacity={0.25} width={10} height={10} blur={2} far={1} />
         </Suspense>
+     
         <OrbitControls minPolarAngle={-Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={false} enablePan={false} />
       </Canvas>
       </div>
@@ -139,6 +141,7 @@ export default function App() {
         }}>
           Save
         </button>
+      </div>
       </div>
       
     </>

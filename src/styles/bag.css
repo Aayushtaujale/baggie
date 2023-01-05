@@ -74,11 +74,12 @@
   margin-top: -150px;
 }
 
-.cards-header img {
-  width: 100%;
-  height: 80%;
+/* .cards-header img {
+  width: 400px;
+  height: 400px;
   object-fit: cover;
-}
+  display: flex;
+} */
 
 .cards-body {
   margin-top: -60px;
