@@ -5,7 +5,7 @@ import '../styles/venuedashboard.css';
 import Fade from 'react-reveal/Fade';
 
 
-
+import React from 'react';
 const VenueDashboard = () => {
     const data=localStorage.getItem("venueId");
     const [image, setImage] =useState('');
@@ -33,7 +33,8 @@ const VenueDashboard = () => {
   return (
     <div className="containersfor">
       <Fade left big>
-      <h1 className="topicscenter">ACTIVE ORDERS</h1>
+      <h1 className="topicscenter">ACTIVE </h1>
+<h1 className="topiccenter">ORDERS </h1>
       </Fade>
       <div className="designsfor">
         <div className="wrapss">
@@ -50,10 +51,23 @@ const VenueDashboard = () => {
               <p> Name: {singleBooking.name}</p>
               <p> Address: {singleBooking.address}</p>
               <p> Order Id: {singleBooking._id}</p>
-              <p> Bag Name: {singleBooking.items[0].bagid.name??"name"}</p>
-              <p> Price: {singleBooking.items[0].bagid.price??"price"}</p>
-              <p> Quantity: {singleBooking.items[0].quantity}</p>
-           <p >Image:    <img src={'http://localhost:90/'+singleBooking.items[0].bagid.image??"image"} className="img-thumbnail" /></p>
+
+              <br/>
+              <p>Order Details:</p>
+                {singleBooking.items.map((item)=>{
+                  return(
+                    <React.Fragment>
+                     <br/>
+              <p> Bag Name: {item.bagid.name??"name"}</p>
+              <p> Price: {item.bagid.price??"price"}</p>
+              <p> Quantity: {item.quantity}</p>
+           <p >Image:    <img src={'http://localhost:90/'+item.bagid.image??"image"} className="img-thumbnail" /></p>
+                      </React.Fragment>
+                  );
+                })}
+
+
+              
 
               {/* <div className="btn1">
               <Link to={"/updatebooking/" + singleBooking._id}>Update</Link>

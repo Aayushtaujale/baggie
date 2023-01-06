@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import '../styles/mybookings.css';
 import Fade from 'react-reveal/Fade';
 
-
+import React from 'react';
 
 const DisplayBooking = () => {
   const[bookingData, setbookingData]=useState('');
@@ -42,28 +42,37 @@ const DisplayBooking = () => {
   return (
     <div className="containerfor">
       <Fade left big>
-      <h1 className="topiccenter">MY ORDERS</h1>
+      <h1 className="topichead">MY ORDERS</h1>
       </Fade>
       <div className="designfor">
         <div className="wraps">
        
       <div className="row">
         
-        {bookingDetails.map((singleBooking) => {
-          console.log(singleBooking)
+      {bookingDetails.map((singleBooking) => {
           return (
             <div className="col-md-4">
                <Fade top big>
                <div className="maintheme">
             
-               <p> Order ID: {singleBooking._id}</p>
-              <p> Bag Name: {singleBooking.items[0].bagid.name??"name"}</p>
-              <p> Price: {singleBooking.items[0].bagid.price??"price"}</p>
-              <p> Quantity: {singleBooking.items[0].quantity}</p>
-           
+              
+              <p> Name: {singleBooking.name}</p>
+              <p> Address: {singleBooking.address}</p>
+              <p> Order Id: {singleBooking._id}</p>
 
-
-              <p >Image:    <img src={'http://localhost:90/'+singleBooking.items[0].bagid.image??"image"} className="img-thumbnail" /></p>
+              <br/>
+              <p>Order Details:</p>
+                {singleBooking.items.map((item)=>{
+                  return(
+                    <React.Fragment>
+                     <br/>
+              <p> Bag Name: {item.bagid.name??"name"}</p>
+              <p> Price: {item.bagid.price??"price"}</p>
+              <p> Quantity: {item.quantity}</p>
+           <p >Image:    <img src={'http://localhost:90/'+item.bagid.image??"image"} className="img-thumbnail" /></p>
+                      </React.Fragment>
+                  );
+                })}
               {/* <div className="btn1"> */}
               {/* <Link to={"/updatebooking/" + singleBooking._id}>Update</Link> */}
               {/* </div> */}
