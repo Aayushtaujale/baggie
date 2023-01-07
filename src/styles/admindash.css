@@ -1,0 +1,16 @@
+.buttonorder{
+    font-size: 50px;
+    width: auto;
+
+    margin-top: 80px;
+    margin-left: 400px;
+}
+
+.buttonbags{
+    font-size: 50px;
+    width: auto;
+    margin-top: -120px;
+    margin-left: 700px;
+    color: black;
+background-color: coral;
+}

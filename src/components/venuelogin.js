@@ -38,7 +38,7 @@ const Venuelogin=()=>{
                 
                 setTimeout(() => {
                     notify("Logged In");
-                  window.location.replace("/venuedashboard");
+                  window.location.replace("/admindash");
                   notify("Logged In")
                 }, 2000);
                 notify("Logged In")

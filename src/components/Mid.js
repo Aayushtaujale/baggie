@@ -24,6 +24,7 @@ import VenueDashboard from "./venuedashboard";
 import PrivateRoute from "./ProtectedRoute";
 import PrivateRouteVenue from "./ProtectedRouteVenue";
 import TryButton from "./try";
+import Admin from "./admindash";
 
 const Mid=()=>{
     return (
@@ -36,6 +37,7 @@ const Mid=()=>{
             <Route path="/Home" element={<Home/>}/>
             <Route path="/" element={<Home/>}/>
             <Route path="/Contact" element={<ContactUs/>}/>
+            <Route path="/admindash" element={<Admin/>}/>
         <Route path="/addtocart" element={
         <PrivateRoute>
           <Cart />

@@ -70,6 +70,9 @@ const DisplayBooking = () => {
               <p> Price: {item.bagid.price??"price"}</p>
               <p> Quantity: {item.quantity}</p>
            <p >Image:    <img src={'http://localhost:90/'+item.bagid.image??"image"} className="img-thumbnail" /></p>
+
+           
+           
                       </React.Fragment>
                   );
                 })}

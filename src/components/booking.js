@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage, faUpload } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from 'react';
 
 
 
@@ -19,15 +20,18 @@ const Booking=()=>{
         
     } = useCart();
     
+    useEffect(()=>{
+        toast.info("Disclaimer: If you have modified your bag then please upload the downloaded image.")
+    },[])
     const params = useParams();
     const notify = (message) => toast.success(message);
     // const [bagid,setBagid] = useState('');
     
-    toast.info("Disclaimer: If you have modified your bag then please upload the downloaded image.")
+    
     const [name, setName] = useState('');
     const [address,setAddress] = useState('');
     const [number,setNumber] = useState('');
-        const [image, setImage] =useState('');
+    const [image, setImage] =useState('');
     // const [venuedata,setvenueData]=useState('');
     
     const [message,setMessage] = useState('');
@@ -45,16 +49,21 @@ const Booking=()=>{
             return;
         }
         
-        const data = {
-            item: items,
-            name : name,
-            address:address,
-            number:number,
-            image:image
+        const formData = new FormData();
+            // item: items,
+            // name : name,
+            // address:address,
+            // number:number,
+            // image:image
+            formData.append("image",image)
+            formData.append("name",name);
+            formData.append("address",address);
+            formData.append("number",number);
+            formData.append("item",JSON.stringify(items));
             
-        }
+        
         console.log(items)
-        axios.post('http://localhost:90/booking/buy',data, config)
+        axios.post('http://localhost:90/booking/buy',formData, config)
         .then(response=>{
             console.log(response);
             setMessage(response.data.message);
@@ -140,7 +149,7 @@ const Booking=()=>{
 
                 </div>
             </div>
-            <ToastContainer />
+            <ToastContainer limit={1}/>
         </div>
     )
 
