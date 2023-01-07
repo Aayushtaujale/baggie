@@ -5,10 +5,10 @@ import '../styles/login.css';
 import Fade from 'react-reveal/Fade';
 
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import Spin from 'react-reveal/Spin';
 import Wobble from 'react-reveal/Wobble';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 // -----------------------------------------------------

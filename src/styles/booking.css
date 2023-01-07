@@ -1,3 +1,5 @@
+
+
 .headcontainer{
     /* background-image: url('/public/images/img-footer.jpg') ; */
   /* height: 100vh; */
@@ -32,4 +34,8 @@ justify-content: center;
 
   .texts{
     margin-left: 50px;
+  }
+
+  .imagee{
+    color: bisque;
   }

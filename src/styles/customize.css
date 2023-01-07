@@ -18,7 +18,7 @@ h1 {
   
   .picker {
     position: absolute !important;
-    top: 74px;
+    top: 100px;
     left: 70px;
     width: 90px !important;
     height: 90px !important;

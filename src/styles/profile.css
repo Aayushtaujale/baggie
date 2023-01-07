@@ -21,7 +21,7 @@
   .topicmain{
     color: wheat;
     margin-top: -100px;
-    /* font: weight 90px;; */
+    font-family: cursive;
   }
 
   .form-groups{
@@ -60,8 +60,20 @@
   }
   
   .btn-dark{
-    margin-left: 180px;
+    margin-left: 200px;
   }
   .form-control{
-    margin-left: 70px;
+    margin-left: 100px;
+  }
+
+  .btn-light{
+    background-color: rgb(14, 46, 73);
+    border-radius: 15px;
+    width:150px ;
+    margin-left: 5px;
+    
+    
+  }
+  .img-thumbnail{
+    margin-left: 17px;
   }

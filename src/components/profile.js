@@ -83,7 +83,7 @@ const Profile=()=>{
                     <p>Number: {customerdata.number}</p>
                     {/* <p>Address: {customerdata.address}</p> */}
 
-                    <p><Link to="/updateprofile">Update profile</Link></p>
+                    <p className="btn btn-light"><Link to="/updateprofile">Update profile</Link></p>
                 </div>
                 </div>
             </div>

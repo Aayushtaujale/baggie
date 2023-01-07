@@ -7,3 +7,4 @@ Feature: Is add category successful?
     When I enter description
     
     Then I should see the category
+  

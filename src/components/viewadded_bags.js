@@ -6,12 +6,22 @@ import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import { Button } from "bootstrap";
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { useParams } from "react-router-dom";
 
 
 const Viewbag = (props) => {
   const params = useParams();
-    const notify = (message) => toast.success(message);
+    // const notify = (message) => toast.info('🦄 Wow so easy!', {
+    //   position: "top-center",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "colored",
+    //   });
     const [venueid,setVenueid] = useState('');
     const [name, setName] = useState('');
   // const notify = (message) => toast.success(message);
@@ -21,14 +31,13 @@ const Viewbag = (props) => {
   
   const { addItem } = useCart();
 
-  // notify("Added To Cart")
   const config = {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("ticket"),
     },
   };
-
-
+  
+  
 //   const Viewbag=(e)=>{
 //     e.preventDefault();
 //     const data = {
@@ -70,6 +79,18 @@ const Viewbag = (props) => {
         const { data, success } = response.data;
         if (success) {
           setView(data);
+          toast.info('🦄 OFFER OFFER OFFER! 20% off on New Year', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            rtl:false
+            });
+        clearTimeout(toast.info)
         } else {
         }
       })
@@ -136,7 +157,7 @@ const Viewbag = (props) => {
                   <div className="size">
 
                   <div className="custom">
-                  <Link to={"/custombag"} class="tag tag-teal
+                  <Link to={`/custombag/${eachView._id}`} class="tag tag-teal
                   ">Customize</Link>
                   </div>
                   <div className="links">
@@ -155,7 +176,7 @@ const Viewbag = (props) => {
         })}
       </div>
     </div>
-    <ToastContainer />
+    <ToastContainer limit={1}/>
         </div>
   );
 };

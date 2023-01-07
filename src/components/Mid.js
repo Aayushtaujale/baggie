@@ -41,7 +41,7 @@ const Mid=()=>{
           <Cart />
           </PrivateRoute>
           } />
-        <Route path="/custombag" element={<Picker />} />
+        <Route path="/custombag/:id" element={<Picker />} />
         <Route path="/viewadded_bags" element={<Viewbag />} />
         <Route path="/viewbag" element={<View />} />
         <Route path="/register" element={<Register />} />

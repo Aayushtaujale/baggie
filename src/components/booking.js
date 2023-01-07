@@ -6,43 +6,52 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from "react-router-dom";
 import { useCart } from "react-use-cart";
-const Booking=()=>{
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImage, faUpload } from "@fortawesome/free-solid-svg-icons";
 
+
+
+const Booking=()=>{
+    
     const {
         
         items,
         
-      } = useCart();
-
+    } = useCart();
+    
     const params = useParams();
     const notify = (message) => toast.success(message);
     // const [bagid,setBagid] = useState('');
-
+    
+    toast.info("Disclaimer: If you have modified your bag then please upload the downloaded image.")
     const [name, setName] = useState('');
     const [address,setAddress] = useState('');
     const [number,setNumber] = useState('');
+        const [image, setImage] =useState('');
     // const [venuedata,setvenueData]=useState('');
-
+    
     const [message,setMessage] = useState('');
     const config ={
         headers:{
             Authorization:'Bearer '+localStorage.getItem('ticket')
         }
     }
-
+    
+    
     const booking=(e)=>{
         e.preventDefault();
         if(name==="" || address==="" || number===""){
             toast.error("Error Validations Failed");
             return;
         }
-
+        
         const data = {
             item: items,
             name : name,
             address:address,
             number:number,
-        
+            image:image
+            
         }
         console.log(items)
         axios.post('http://localhost:90/booking/buy',data, config)
@@ -51,10 +60,10 @@ const Booking=()=>{
             setMessage(response.data.message);
             console.log(response.data.message)
             notify(" Successful");
-                
+            
             setTimeout(() => {
-              window.location.replace("/payment");
-              
+                window.location.replace("/payment");
+                
             }, 
             
             2000);
@@ -65,7 +74,7 @@ const Booking=()=>{
         })
     }
     
-
+    
     return(
         <div className="headcontainer">
             <video src='/videos/booking.mp4' autoPlay loop muted />
@@ -110,6 +119,14 @@ const Booking=()=>{
             </div>
             </Slide>
             <br/>
+            <div className="form-groups">
+                            <input type="file" className="form-control" onChange={(e)=>setImage(e.target.files[0])}/>
+                            <br/>
+                       
+                       
+
+
+                        </div>
 
         
             <Slide left>

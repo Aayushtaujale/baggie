@@ -1,11 +1,12 @@
 import React, { Suspense, useRef, useState, useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree} from "@react-three/fiber";
 import { ContactShadows, Environment, useGLTF, OrbitControls } from "@react-three/drei";
 import { HexColorPicker } from "react-colorful";
 import { proxy } from "valtio";
 import { useProxy } from "valtio";
 import '../styles/customize.css';
-
+import { useCart } from "react-use-cart";
+import { useControls, button, folder } from 'leva'
 import {render}  from 'react-dom';
 import * as htmlToImage from 'html-to-image';
 import * as THREE from 'three';
@@ -24,6 +25,7 @@ const state = proxy({
   },
 });
 
+
 function Shoe() {
   const ref = useRef()
   const snap = useProxy(state)
@@ -31,6 +33,17 @@ function Shoe() {
   // { nodes, materials } are extras that come from useLoader, these do not exist in threejs/GLTFLoader
   // nodes is a named collection of meshes, materials a named collection of materials
   const { nodes, materials } = useGLTF("female_bag.glb")
+
+
+  const gl = useThree((state) => state.gl)
+  useControls({
+    SAVE: button(() => {
+      const link = document.createElement('a')
+      link.setAttribute('download', 'canvas.png')
+      link.setAttribute('href', gl.domElement.toDataURL('image/png').replace('image/png', 'image/octet-stream'))
+      link.click()
+    })
+  })
 
   // Animate model
   useFrame((state) => {
@@ -106,14 +119,32 @@ function Picker() {
   )
 }
 
-export default function App() {
+export default function App({}) {
+  const { enabled, dpr, ...props } = useControls({
+    // enabled: true,
+    // movingDownsampling: true,
+    // useTileRender: false,
+    // dpr: { value: 1.5, min: 0.5, max: 2, step: 0.5 },
+    // samples: { value: 128, min: 8, max: 2048, step: 8 },
+    // bounces: { value: 4, min: 1, max: 10, step: 1 },
+    // envMapIntensity: { value: 0.7, min: 0, max: 1 },
+    // denoise: folder({
+    //   enableDenoise: false,
+    //   enableTemporalDenoise: true,
+    //   enableSpatialDenoise: true,
+    //   denoiseColorBlendFactor: { value: 0.5, min: 0, max: 1 },
+    //   denoiseMomentBlendFactor: { value: 0.5, min: 0, max: 1 },
+    //   denoiseColorFactor: { value: 0.1, min: 0, max: 1 },
+    //   denoisePositionFactor: { value: 0.1, min: 0, max: 1 }
+    // })
+  })
   var node = document.getElementById("hello")
-
+  const snap = useProxy(state)
   return (
     <>
-    <div >
+    <div id="screenshot">
     <div style={{height:'600px'}} >
-      <Canvas concurrent pixelRatio={[1, 1.5]} camera={{ position: [0, 0, 2.75] }} >
+      <Canvas gl={{ preserveDrawingBuffer: true }} dpr={dpr} concurrent pixelRatio={[1, 1.5]} camera={{ position: [0, 0, 2.75] }} >
         <ambientLight intensity={0.3} />
         <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
        
@@ -128,19 +159,7 @@ export default function App() {
       </div>
       <Picker />
       <div className="App">
-        <button onClick={()=>{
-          htmlToImage.toJpeg(node)
-          .then(function(dataUrl){
-            var img = new Image()
-            img.src = dataUrl
-            document.body.appendChild(img)
-          })
-          .catch((error)=>{
-            console.log(error)
-          })
-        }}>
-          Save
-        </button>
+        
       </div>
       </div>
       
