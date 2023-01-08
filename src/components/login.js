@@ -74,7 +74,7 @@ const Login = () => {
 
   return (
     <div className="login">
-        <video className='videoss' src='/videos/background.mp4' autoPlay loop muted />
+        <video className='video' src='/videos/background.mp4' autoPlay loop muted />
       <div className="back">
 
       
@@ -82,10 +82,9 @@ const Login = () => {
       <div className='firstone'>
       <div className="loginsecond">
         <div className='letstry'>    
-        <Spin>
-
-      <img src="/images/baggs.jpg" className="w-full h-full object-cover"></img>
-        </Spin>
+        
+      <img src="/images/baggs.jpg" className="object-cover"></img>
+        
       </div>
         <div className="roww">
           <div className="topic">
@@ -117,10 +116,12 @@ const Login = () => {
                   placeholder="Password"
                 />
               </div>
+              <div className='log' name="p">
 
               <button type="submit" className="login-input-btn" onClick={loginCustomer}>
                 Login
               </button>
+              </div>
             </form>
             </Wobble>
           </div>

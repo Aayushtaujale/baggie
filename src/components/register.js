@@ -73,7 +73,7 @@ const Register=()=>{
                 <div className="col-md-9">
                 <br></br>
 
-                <h2 className='fonts'>Register</h2>
+                <h1 className='fonts'>Register</h1>
                 <br></br>
                 
                 

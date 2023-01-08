@@ -68,6 +68,11 @@
     .btn{
         width: 90px;
         background-color:rgb(151, 123, 123);
+        
+    }
+
+    .btn :hover{
+        color: coral;
     }
 
     .form-floating{

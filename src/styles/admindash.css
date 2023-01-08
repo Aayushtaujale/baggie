@@ -1,16 +1,41 @@
+.backscreen{
+    height: 580px;
+    background: url('/public/images/background.jpg') center center/cover no-repeat;
+}
+
+
+
 .buttonorder{
     font-size: 50px;
     width: auto;
 
-    margin-top: 80px;
-    margin-left: 400px;
+    margin-top: 180px;
+    margin-left: 450px;
 }
 
 .buttonbags{
     font-size: 50px;
     width: auto;
     margin-top: -120px;
-    margin-left: 700px;
+    margin-left: 750px;
     color: black;
 background-color: coral;
+}
+.buttonaddbags{
+    font-size: 50px;
+    width: auto;
+    /* margin-top: -220px; */
+    margin-left: 570px;
+    color: black;
+background-color: rgb(62, 143, 167);
+}
+
+.buttonaddcat{
+    font-size: 50px;
+    width: auto;
+    /* margin-top: -220px; */
+    margin-left: 500px;
+    margin-top: 25px;
+    color: rgb(248, 248, 248);
+background-color: rgb(202, 114, 184);
 }

@@ -52,11 +52,11 @@ function ContactUs(props) {
                 </Bounce>
 
                 <Slide right cascade>
-                <span className='form-label'>Full Name</span>
+                <span className='form-label' >Full Name</span>
                 </Slide>
                 <br />
                 <Slide right cascade>
-                <input className='form-input' type="text" name="fullName" required/>
+                <input className='form-input' type="text" name="fullName" placeholder="Full Name" required/>
                 </Slide>
                 <br/>
                 <Slide left cascade>
@@ -64,7 +64,7 @@ function ContactUs(props) {
                 </Slide>
                 <br/>
                 <Slide left cascade>
-                <input className='form-input' type="text" name="phone" required/>
+                <input className='form-input' type="text" name="phone" placeholder="Phone Number" required/>
                 </Slide>
                 <br/>
                 <Slide right cascade>
@@ -72,7 +72,7 @@ function ContactUs(props) {
                 </Slide>
                 <br/>
                 <Slide right cascade>
-                <input className='form-input' type="text" name="email" required/>
+                <input className='form-input' placeholder="Email" type="text" name="email" required/>
                 </Slide>
                 <br/>
 
@@ -84,7 +84,7 @@ function ContactUs(props) {
                 </Slide>
                 <br/>
                 <Slide left cascade>
-                <textarea className='form-input' name="message" required></textarea>
+                <textarea className='form-input' placeholder="Message" name="message" required></textarea>
                 </Slide>
                 <br/>
                 <Bounce bottom>

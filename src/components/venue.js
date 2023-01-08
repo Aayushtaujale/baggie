@@ -77,7 +77,7 @@ const Venue=()=>{
               }}>
                 
                 <Fade left big>
-                   <h1 className='labelname'>ADD RESTAURANTS</h1>
+                   <h1 className='labelname'>Register Admin</h1>
                    </Fade>
 
 

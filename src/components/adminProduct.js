@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "../styles/singleproduct.css";
+import "../styles/adminproduct.css";
 import Flip from 'react-reveal/Flip';
 import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
@@ -10,21 +10,19 @@ import { useParams } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const SingleProduct = () => {
+const AdminProduct = () => {
   const { pid } = useParams();
     const notify = (message) => toast.success(message);
     
     const [commentt, setComment]=useState("");
-    const { addItem } = useCart();
-    
   // const notify = (message) => toast.success(message);
 
   const [bagdetails, setBagdetails]= useState("");
   const [commentDetails, setCommentDetails]=useState([]);
 
-  const nav=()=>{
-    window.location.replace("/viewadded_bags");
-  }
+  const[message, setMessage]=useState('');
+  
+  const { addItem } = useCart();
   const config = {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("ticket"),
@@ -121,13 +119,12 @@ useEffect(()=>{
   }, []);
 
 
-  // bagdetails.id=bagdetails._id
   return (
-    <div>
+    <div className="pahilo">
  <main className="">
-    <div className="container">
+    <div className="containe">
 
- <div class="cards-headerr">
+ <div class="tauko">
 
                 
 
@@ -139,13 +136,13 @@ useEffect(()=>{
   
  </div>
 
- <div class="right-column">
- <div class="right-columnn">
+ <div class="ready">
+ <div class="rcolumnn">
 
-<div class="product-description">
+<div class="saman">
   <span><h1>{bagdetails.name}</h1></span>
   
-  <p id="centerrr">
+  <p id="paisa">
     {bagdetails.description}
   </p>
 </div>
@@ -156,7 +153,7 @@ useEffect(()=>{
 
 </div>
 
-<div class="product-price">
+<div class="product-pai">
   <span> Price: <span style={{color: "orange"}}> Rs.{bagdetails.price}</span></span>
  
   
@@ -165,44 +162,35 @@ useEffect(()=>{
 <br></br>
 
 
-<div className="linkkk"  >
-                  < p  class="tags
-                  "  onClick={nav}><br></br> &nbsp; &nbsp; &nbsp; &nbsp; ADD TO CART</p>
-                  </div>
 </div>
 
  </div>
  
 
 </div>
-<div className="bottomm">
+<div className="botho">
         
-<div className="rightt">
-          < div className="commentho">
-            <div class="addComments">
+<div className="daya">
+          < div className="commenthiyo">
+            <div class="comming">
                           
-                            <input type="text"
-                                   class="text" id="innn"
-                                   placeholder="Add a comment..." required onChange={(e)=>setComment(e.target.value)}/>
-
-<div className="pt"><button  className="write" onClick={commentpost}> Post</button></div>
+                          
+                        <h1 className="sirshak"> Comments:</h1>
 
 
-                             <button>
-
-    </button>
+                             
                         </div>
 
 
-                        <div className="show-comments p-5">
+                        <div className="show-com p-5">
                             <div className="show-commentsinside">
                            
                         {commentDetails.map((comments) => {
 
           return (
-            <div className="c-section">
+            <div className="khali">
                 <div className="com-com">
-                <div className="namedate"><span className="text-info">{comments.customerId.firstname} {comments.customerId.lastname} &nbsp; &nbsp; &nbsp; &nbsp; <span className="dateee"> {comments.date} </span> </span>  <p>{comments.comment}</p>
+                <div className="namedate"><span className="text-info">{comments.customerId.firstname} {comments.customerId.lastname} &nbsp; &nbsp; &nbsp; &nbsp; <span className="tarik"> {comments.date} </span> </span>  <p>{comments.comment}</p>
                 
                 
                 </div>
@@ -243,4 +231,4 @@ useEffect(()=>{
      
   );
 };
-export default SingleProduct;
+export default AdminProduct;

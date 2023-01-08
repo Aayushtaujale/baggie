@@ -34,25 +34,25 @@ const View = () => {
   };
   return (
     <div
-      class="venue-body">
+      class="admin-body">
       <h1 className="h1">Available Category</h1>
-      <div class="venue-container">
+      <div class="admin-container">
         {view.map((eachView) => {
           return (
             <>
             <Flip right>
-              <div class="cards">
-                <div class="cards-header">
+              <div class="adcards">
+                <div class="adcardsheader">
                 <img src={'http://localhost:90/'+eachView.categoryImage} className="img-thumbnail" />
                 </div>
 
-                <div class="cards-body">
+                <div class="cardsadbody">
                   <span class="tag tag-teal" >Category Name:</span>
                   <br/>
                   <h5>{eachView.categoryName} </h5>
                   {/* <p>{eachView.address}</p>
                   <p>{eachView.phone}</p> */}
-                  <div className="links">
+                  <div className="linkedin">
                   <Link to={"/addbag"} class="tag tag-teal
                   ">ADD</Link>
                   </div>

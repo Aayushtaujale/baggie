@@ -25,6 +25,9 @@ import PrivateRoute from "./ProtectedRoute";
 import PrivateRouteVenue from "./ProtectedRouteVenue";
 import TryButton from "./try";
 import Admin from "./admindash";
+import Adminbag from "./adminbags";
+import admimProduct from "./adminProduct";
+import AdminProduct from "./adminProduct";
 
 const Mid=()=>{
     return (
@@ -37,13 +40,18 @@ const Mid=()=>{
             <Route path="/Home" element={<Home/>}/>
             <Route path="/" element={<Home/>}/>
             <Route path="/Contact" element={<ContactUs/>}/>
-            <Route path="/admindash" element={<Admin/>}/>
+            <Route path="/admindash" element={
+            <PrivateRouteVenue>
+              <Admin/>
+              </PrivateRouteVenue>
+              }/>
         <Route path="/addtocart" element={
         <PrivateRoute>
           <Cart />
           </PrivateRoute>
           } />
-        <Route path="/custombag/:id" element={<Picker />} />
+        <Route path="/custombag" element={<Picker />} />
+        <Route path="/adminbags" element={<Adminbag />} />
         <Route path="/viewadded_bags" element={<Viewbag />} />
         <Route path="/viewbag" element={<View />} />
         <Route path="/register" element={<Register />} />
@@ -78,6 +86,7 @@ const Mid=()=>{
 
 
         <Route path="/bagg/single/:pid" element={<SingleProduct></SingleProduct>}></Route>
+        <Route path="/admin/single/:pid" element={<AdminProduct></AdminProduct>}/>
         <Route path="/venue" element={<Venue/>}/>
         <Route path="/try" element={<TryButton/>}/>
         <Route path="/venuedashboard" element={<VenueDashboard/>}/>

@@ -7,5 +7,5 @@ Feature: Is register successful?
     When I enter my contact
     When I enter my email
     When I enter my password
-    When I press Register
-    Then I should be loggedin
+    When I click on register
+    Then I should be registered successfully

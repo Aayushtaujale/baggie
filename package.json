@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cucumber/cucumber": "^8.10.0",
     "@emailjs/browser": "^3.10.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
@@ -29,6 +30,7 @@
     "khalti-checkout-web": "^2.2.0",
     "leva": "^0.9.34",
     "nodemailer": "^6.7.7",
+    "rc-slider": "^10.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-color": "^2.19.3",
@@ -41,6 +43,7 @@
     "react-snap": "^1.23.0",
     "react-toastify": "^9.1.1",
     "react-use-cart": "^1.13.0",
+    "selenium-webdriver": "^4.7.1",
     "three": "^0.147.0",
     "three-gltf-exporter": "^0.0.1",
     "use-react-screenshot": "^3.0.0",
@@ -71,6 +74,7 @@
     ]
   },
   "devDependencies": {
+    "chai": "^4.3.7",
     "web-vitals": "^3.1.0"
   }
 }

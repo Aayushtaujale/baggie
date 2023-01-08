@@ -1,6 +1,7 @@
+
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import "../styles/bag.css";
+import "../styles/baggie.css";
 import Flip from 'react-reveal/Flip';
 import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
@@ -8,7 +9,7 @@ import { Button } from "bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useParams } from "react-router-dom";
-
+import Slider from "rc-slider";
 
 const Viewbag = (props) => {
   const params = useParams();
@@ -37,29 +38,7 @@ const Viewbag = (props) => {
     },
   };
   
-  
-//   const Viewbag=(e)=>{
-//     e.preventDefault();
-//     const data = {
-//         venueid: params.id,
-//         name : name,
-    
-//     }
-    
-//     axios.post('http://localhost:90/booking/book',data, config)
-//     .then(response=>{
-//         console.log(response);
-//         // setMessage(response.data.message);
-//         console.log(response.data.message)
-//         notify("Added to cart Successfully");
-            
-        
-        
-//     })
-//     .catch(e=>{
-//         console.log(e)
-//     })
-//   }
+
 
 
 
@@ -69,7 +48,7 @@ const Viewbag = (props) => {
     displayBag();
     toast.info('🦄 OFFER OFFER OFFER! 20% off on New Year', {
       position: "top-center",
-      autoClose: 5000,
+      autoClose: 200,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
@@ -109,20 +88,26 @@ const Viewbag = (props) => {
     <div
       class="venues-body">
         {/* <video src='/videos/bags.mp4' autoPlay loop muted /> */}
-      <h1 className="heading">What's UP Baggie!!</h1>
       <div class="venues-container">
+        <h1 className="heading">What's UP Baggie!!</h1>
+        <Slider
+        min={200}
+        max={3000}
+        value={view.price}
+        onChange={(value) => console.log(value)}
+      />
         {view.map((eachView) => {
           eachView.id=eachView._id
             return (
                 <>
             <Flip right>
               <div class="cards">
-                <div class="cards-header">
+                <div class="headeroff">
 
                 <Link to={"/bagg/single/" + eachView._id}><img id="post-img" 
                 
                 src={'http://localhost:90/'+ eachView.image} 
-                            alt="post" class="cover"/> </Link>
+                            alt="post" className="cover"/> </Link>
 
                 </div>
 
@@ -132,10 +117,10 @@ const Viewbag = (props) => {
                   
                   <h5>{eachView.name} </h5>
                   
-                  
+                  <br/>
                   <span class="tag tag-teal" >Bag Price:</span>
                 
-                  <p>{eachView.price}</p>
+                  <p className="textetxt">{eachView.price}</p>
                   
                  
                   <span class="tag tag-teal" >Bag Details:</span>
@@ -146,19 +131,19 @@ const Viewbag = (props) => {
 
                     <div className="box-content-content">
                       
-                    <p >{eachView.description}</p>
+                    <p className="textetxt">{eachView.description}</p>
                     </div>
                     
 
                     </div>
                 
                    
-                  <br/>
+                  
                   
                   <div className="size">
 
                   <div className="custom">
-                  <Link to={`/custombag/${eachView._id}`} class="tag tag-teal
+                  <Link to="/custombag" class="tag tag-teal
                   ">Customize</Link>
                   </div>
                   <div className="links">

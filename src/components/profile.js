@@ -59,6 +59,7 @@ const Profile=()=>{
                         <div className="form-groups">
                             <input type="file" className="form-control" onChange={(e)=>setImage(e.target.files[0])}/>
                             <br/>
+                            <br/>
                        
                        
                             <input type="submit" className="btn btn-dark" onClick={updateProfile}/>

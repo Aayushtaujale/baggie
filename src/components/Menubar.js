@@ -32,10 +32,10 @@ const Menubar=()=>{
     menu=(
       <>
      
-     <li class="nav-item">
+     {/* <li class="nav-item">
               <Link class="nav-link" to="/viewbag">Add Bags
               </Link>
-              </li>
+              </li> */}
               <li class="nav-item">
               <Link class="nav-link" to="/profile">Profile
               </Link>
@@ -56,7 +56,7 @@ const Menubar=()=>{
               </Link></li>
 
             <li class="nav-item">
-              <button class="btn btn-primary" onClick={logOut}>Log Out
+              <button class="btn btn-primary" onClick={logOut}>LogOut
               </button>
             </li>
       </>
@@ -91,6 +91,10 @@ const Menubar=()=>{
             
           <li class="nav-item">
               <Link class="nav-link" to="/Home"> Home
+              </Link></li>
+
+              <li class="nav-item">
+              <Link class="nav-link" to="/admindash"> Dashboard
               </Link></li>
 
               

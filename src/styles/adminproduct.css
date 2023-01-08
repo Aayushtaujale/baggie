@@ -1,0 +1,322 @@
+/* Basic Styling */
+/* html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  } */
+   
+  .pahilo{
+    height: auto;
+  }
+  .containe {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0 0 0 ;
+    display: flex;
+    height: auto;
+  }
+
+  #single {
+    background-color: #fff;
+    width: 90%;
+    height: 100% ;
+ }
+ 
+
+    .tauko{
+        width: 40%;
+
+    }
+
+
+/* Columns */
+/* .left-column {
+    width: 50%;
+    
+    background-color: red;
+    height: 50%;
+  } */
+   
+  .ready {
+    width: 50%;
+    margin-top: 60px;
+    /* background-color: pink; */
+    height: 50%;
+    justify-content: center;
+  }
+
+.paisa{
+    justify-content: center;
+}
+
+
+
+  /* Product Description */
+.saman {
+    justify-content: center;
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 20px;
+    justify-content: center;
+
+  }
+
+  #centerrr{
+    justify-content: center;
+    text-align: justify;
+  }
+  .product-description span {
+    font-size: 12px;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    justify-content: center;
+  }
+
+
+  .product-description h4 {
+    font-weight: 300;
+    font-size: 52px;
+    color: #43484D;
+    letter-spacing: -2px;
+  }
+  .product-description p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #86939E;
+    line-height: 24px;
+  }
+
+
+
+  /* Product Color */
+.product-color {
+    margin-bottom: 30px;
+  }
+   
+  .color-choose div {
+    display: inline-block;
+  }
+   
+ 
+   
+  /* Cable Configuration */
+.cable-choose {
+    margin-bottom: 20px;
+  }
+   
+  .cable-choose button {
+    border: 2px solid #E1E8EE;
+    border-radius: 6px;
+    padding: 13px 20px;
+    font-size: 14px;
+    color: #5E6977;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .5s;
+  }
+   
+  .cable-choose button:hover,
+  .cable-choose button:active,
+  .cable-choose button:focus {
+    border: 2px solid #86939E;
+    outline: none;
+  }
+   
+  .cable-config {
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 20px;
+  }
+   
+  .cable-config a {
+    color: #358ED7;
+    text-decoration: none;
+    font-size: 12px;
+    position: relative;
+    margin: 10px 0;
+    display: inline-block;
+  }
+ 
+
+
+
+  /* Product Price */
+.product-pai {
+    display: flex;
+    align-items: center;
+  }
+   
+  .product-pai span {
+    font-size: 26px;
+    font-weight: 300;
+    color: #43474D;
+    margin-right: 20px;
+  }
+   
+  .cart-btn {
+    display: inline-block;
+    background-color: #7DC855;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 30px;
+    transition: all .5s;
+  }
+  .cart-btn:hover {
+    background-color: #64af3d;
+  }
+
+
+  .botho{
+    height: 100%;
+    width: 60%;
+    margin-top: -380px;
+margin-left: 500px;    
+}
+
+
+.show-com{
+    display: flex;
+    justify-content: center;
+    height:fit-content;
+    margin-top: -200px;
+}
+
+/* .addComments{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+} */
+
+/* 
+#innn{
+    width: 50%;
+    height: 50px;
+    padding: 5px;
+    color: black;
+} */
+
+/* .write{
+  width: 100px;
+  height: 50px;
+  background-color: black;
+  color: orange;
+}
+ */
+
+/* .write:hover{
+  width: 100px;
+  height: 50px;
+  color: white;
+  background-color: orange;
+  border-color: orange;
+} */
+
+
+.tarik{
+  font-size: 12px;
+  color: grey;
+}
+
+
+
+
+
+
+/* .containerrr {
+  overflow: hidden;
+  height: 10vh;
+} */
+
+/* .box-contentt {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+} */
+
+
+/* #descriptionn{
+  font-size: 12px;
+  color: white;
+
+  text-decoration: none;
+
+
+} */
+
+
+
+
+
+.daya {
+  /* background-color: rgb(176, 157, 157); */
+  width: 100%;
+  min-height: 100%;
+  padding: 10vh 2vh 0 2vh;
+}
+
+
+.commenthiyo {
+  margin-top: 20px;
+  min-height: 100%;
+  height: fit-content;
+  width: auto;
+  /* background-color: rgb(245, 245, 245); */
+  /* padding: 4vh 0vh; */
+}
+
+
+
+.comming {
+  /* height: 10vh; */
+  /* padding: 2VH; */
+  margin-top: 350px;
+}
+/* .comming {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding: px 0;
+} */
+
+.sirshak{
+  margin-top: 100px;
+}
+
+
+/* .linkkk{
+  display: flex;
+  justify-content: center;
+}
+
+
+.linkkk .tags{
+  height: 60px;
+  width: 25%;
+  background-color: black;
+
+} */
+
+
+/* .linkkk .tags:hover{
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+  
+} */
+
+
+.khali{
+  /* padding-bottom: 20px; */
+  margin-top: 200px;
+
+}
+
+
+

@@ -107,7 +107,7 @@ const CategoryShowAdd = () => {
           <form>
             <div className="a-img">
               <label htmlFor="fileInput">
-                <p className="imagee">
+                <p className="imagee" >
                   Upload Image{" "}
                   <FontAwesomeIcon className="icon" icon={faUpload} />
                   {/* <p className="pluss">+</p> */}
@@ -146,7 +146,7 @@ const CategoryShowAdd = () => {
                 className="pt-5"
                 style={{ display: "flex" }}
               >
-                <button onClick={addCategory} className="writeSubmit">
+                <button type="submit" onClick={addCategory} className="writeSubmit">
                   {" "}
                   Post
                 </button>

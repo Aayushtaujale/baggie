@@ -73,7 +73,7 @@ const Venuelogin=()=>{
                 </Bounce>
 
                 <Bounce top>
-                <input type="text" className="venue-input" onChange={(e)=>setEmail(e.target.value)} placeholder="Email" id="validationCustom03" required/>
+                <input type="text" className="venue-input" onChange={(e)=>setEmail(e.target.value)} placeholder="Email"  required/>
                 
                 </Bounce>
             </div>

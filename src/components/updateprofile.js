@@ -82,24 +82,24 @@ const Update=()=>{
             <form>
             <div class="form-group">
                 <label >Firstname</label>
-                <input type="text" className="form-control" value={firstname} onChange={e=>{setFirstname(e.target.value)}}/>
+                <input type="text" placeholder='Firstname' className="form-control" value={firstname} onChange={e=>{setFirstname(e.target.value)}}/>
             </div>
             <br></br>
 
             <div class="form-group">
                 <label >Lastname</label>
-                <input type="text" className="form-control" value={lastname} onChange={e=>{setLastname(e.target.value)}} />
+                <input type="text" placeholder='Lastname' className="form-control" value={lastname} onChange={e=>{setLastname(e.target.value)}} />
             
             </div>
             <br></br>
             <div class="form-group">
                 <label >Number</label>
-                <input type="text" className="form-control" value={number} onChange={e=>{setNumber(e.target.value)}} />
+                <input type="text" placeholder='Number' className="form-control" value={number} onChange={e=>{setNumber(e.target.value)}} />
             </div>
             <br></br>
             <div class="form-group">
                 <label>Email</label>
-                <input type="text" className="form-control" value={email} onChange={e=>{setEmail(e.target.value)}} />
+                <input type="text" placeholder='Email' className="form-control" value={email} onChange={e=>{setEmail(e.target.value)}} />
             </div>
             <br/>
 

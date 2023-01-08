@@ -99,7 +99,7 @@ const Booking=()=>{
             <br/>
 
             <Slide left>
-            <div className="forms-group">
+            <div className="fgrouped">
               <label className='text'> Name </label>
               <input
                 type="text"
@@ -128,7 +128,7 @@ const Booking=()=>{
             </div>
             </Slide>
             <br/>
-            <div className="form-groups">
+            <div className="formedgroups">
                             <input type="file" className="form-control" onChange={(e)=>setImage(e.target.files[0])}/>
                             <br/>
                        
@@ -142,6 +142,8 @@ const Booking=()=>{
                 <div className='buttons'>
             <button type="submit" className="btn btn-primary" onClick={booking}>Buy</button>
             </div>
+            <br/>
+            <br/>
             </Slide>
             </form>
 

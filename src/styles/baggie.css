@@ -2,9 +2,34 @@
 * {
   box-sizing: border-box;
 }
-.admin-body {
-  background: url('/public/images/viewbag.jpg') center center/cover no-repeat;
-  /* height: 1000px; */
+/* .video {
+  
+    object-fit:contain;
+    width: 100%;
+    height: 120%;
+    position:absolute;
+    z-index: -1;
+  
+  
+    
+  } */
+  .clip{
+    height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* color: rgb(0, 0, 0); */
+  font-size: 30px;
+  }
+.venues-body {
+  background: url('/public/images/back.jpg') center center/cover no-repeat;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,14 +39,18 @@
   font-family: "Roboto", sans-serif;
   color: #10182f;
 }
-.admin-container {
+/* .heading{
+    margin-left: 550px;
+} */
+.venues-container {
   /* display: flex; */
   width: 1040px;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-top: 190px;
  
 }
-.adcards {
+.cards {
   /* background: url('/public/images/img-footer.jpg') center center/cover no-repeat; */
   
   background-color: #fff;
@@ -32,32 +61,44 @@
   height: 300px;
 }
 
-.adcardsheader img {
-  width: 350px;
-  height: 350px;
+
+.headeroff{
+  width: 100%;
+  height: 100%;
+  width: 600px;
+  height: 600px;
   display: flex;
-  margin-top: 170px;
-  object-fit: cover;
-  margin-left: 320px;
+  margin-left: 200px;
+  margin-top: -150px;
 }
 
-.cardsadbody {
+.headeroff img {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  margin-left: 50px;
+  margin-top: 150px;
+}
+
+.cards-body {
   margin-top: 20px;
+  margin-top: -60px;
   margin-left: 360px;
   /* margin: auto; */
   margin-bottom: 60px;
   width: 300px;
-  background-color: slategrey;
+  background-color: rgb(53, 69, 85);
   
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: flex-start;
   padding: 15px;
+  /* padding: 15px; */
   color: #fff;
   box-shadow: 0 2px 20px rgb(0, 0, 0);
+  border-radius: 50px;
 }
-
 .tag {
   
   background: #cccccc;
@@ -69,51 +110,43 @@
   text-transform: uppercase;
   cursor: pointer;
 }
-
+.tags {
+  
+  background: #cccccc;
+  border-radius: 50px;
+  font-size: 12px;
+  width: 105px;
+  margin: 0;
+  color: #fff;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #0f71a6;
+}
 .tag-teal {
   background-color: #0f71a6;
   
 }
-
-.linkedin{
+.links{
   background-color:#0f71a6;
   box-shadow: 0 2px 20px rgba(255, 255, 255, 0.492);
   width: 35px;
   margin-left: 150px;
-  margin-top: -50px;
+  margin-top: -20px;
   margin-bottom: 50px;
   
-  
+
 }
 
-.h1{
-  color: rgb(163, 203, 237);
+.size{
+  margin-top: -50px;
 }
 
+.textetxt{
+    font-size: medium;
+}
 
-/* .tag-purple {
-  background-color: #5e76bf;
+.cover{
+    height: 300px;
+    width: 200px;
 }
-.tag-pink {
-  background-color: #cd5b9f;
-} */
-/* .card-body p {
-  font-size: 13px;
-  margin: 0 0 40px;
-} */
-/* .user {
-  display: flex;
-  margin-top: auto;
-} */
-/* .user img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-.user-info h5 {
-  margin: 0;
-}
-.user-info small {
-  color: #545d7a;
-} */

@@ -56,7 +56,7 @@ const Addbag=()=>{
             
                 
             setTimeout(() => {
-                window.location.replace("/viewadded_bags");
+                window.location.replace("/adminbags");
             }, 2000);
             
         })
