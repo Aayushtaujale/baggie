@@ -129,7 +129,7 @@ const Booking=()=>{
             </Slide>
             <br/>
             <div className="formedgroups">
-                            <input type="file" className="form-control" onChange={(e)=>setImage(e.target.files[0])}/>
+                            <input type="file" required={false} className="form-control" onChange={(e)=>setImage(e.target.files[0])}/>
                             <br/>
                        
                        

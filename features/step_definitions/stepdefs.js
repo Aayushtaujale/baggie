@@ -93,7 +93,7 @@ Given(
 
 
   
-
+////////////////////////////////////////////
   Given(
     "I visit Add Category Page",
     { timeout: 1000 * 1000 },
@@ -129,7 +129,7 @@ Given(
 
 
   
-
+/////////////////////////////////
   Given(
     "I visit Register Admin Page",
     { timeout: 1000 * 1000 },
@@ -163,7 +163,7 @@ Given(
       element.sendKeys("0159");
   });
 
-  When("I enter my admins email", async () => {
+  When("I enter admins email", async () => {
     let element = driver.wait(
       until.elementLocated(By.xpath("//input[@placeholder='Email']")
     ));
@@ -185,7 +185,7 @@ Given(
     ));
      registeradmin.click();
   })
-  Then("I should be",async ()=>{
+  Then("I should be registered",async ()=>{
     return true
       
  });
@@ -220,6 +220,101 @@ When("I click login", async()=>{
 })
 
 Then("I should be Logged inn",async ()=>{
+ return true
+   
+});
+
+
+
+
+
+
+Given(
+  "I visit Contact Us Page",
+  { timeout: 1000 * 1000 },
+  async () => {
+    await driver.get("http://localhost:3000/Contact");
+  }
+);
+When("I enter the full name", async () => {
+  await driver
+    .findElement(By.xpath("//input[@placeholder='Full Name']"))
+    .sendKeys("BDD TDD");
+});
+When("I enter the phone number", async () => {
+  await driver
+    .findElement(By.xpath("//input[@placeholder='Phone Number']"))
+    .sendKeys("986300");
+});
+
+When("I enter the email address", async()=>{
+  await driver
+    .findElement(By.xpath("//input[@placeholder='Email']"))
+    .sendKeys("bdd@gmail.com");
+})
+
+When("I enter the message", async()=>{
+  await driver
+    .findElement(By.xpath("//textarea[@placeholder='Message']"))
+    .sendKeys("Success");
+})
+
+When("I clicked on the submit button", async()=>{
+  let sub =  driver.wait(
+    until.elementLocated(By.xpath("//button[@class='react-reveal form-input-btn']")
+  ));
+   sub.click();
+})
+
+Then("mail should be send",async ()=>{
+ return true
+   
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+Given(
+  "I visit Booking Bag Page",
+  { timeout: 1000 * 1000 },
+  async () => {
+    await driver.get("http://localhost:3000/booking");
+  }
+);
+When("I enter user name", async () => {
+  await driver
+    .findElement(By.xpath("//input[@placeholder='Name']"))
+    .sendKeys("User");
+});
+When("I enter user address", async () => {
+  await driver
+    .findElement(By.xpath("//input[@placeholder='Shipping Address']"))
+    .sendKeys("Lalitpur");
+});
+
+When("I enter user number", async()=>{
+  await driver
+    .findElement(By.xpath("//input[@placeholder='Number']"))
+    .sendKeys("22222");
+})
+
+When("I click on the Buy button", async()=>{
+  let book =  driver.wait(
+    until.elementLocated(By.xpath("//button[@type='submit']")
+  ));
+   book.click();
+})
+
+Then("purchase should be succesful",async ()=>{
  return true
    
 });

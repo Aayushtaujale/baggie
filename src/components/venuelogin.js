@@ -60,7 +60,7 @@ const Venuelogin=()=>{
             <div className="row">
                 <div className="topic">
                 <Bounce top>
-                <h2 className='topiclabels'>Venue Login</h2>
+                <h2 className='topiclabels'>Admin Login</h2>
                 </Bounce>
 
                 <p>{message}</p>
