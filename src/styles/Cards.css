@@ -112,6 +112,9 @@
     font-size: 18px;
     line-height: 24px;
   }
+  .trend{
+    margin-top: 40px;
+  }
   
   @media only screen and (min-width: 1200px) {
     .content__blog__container {

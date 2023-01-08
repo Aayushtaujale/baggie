@@ -8,7 +8,7 @@ function Cards() {
   return (
     <div className='cardss'>
         <Bounce top cascade>
-      <h1>Our Trendings</h1>
+      <h1 className='trend'>Our Trendings</h1>
       </Bounce>
       <Fade left>
       <div className='cards__container'>
